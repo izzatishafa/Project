@@ -1,21 +1,17 @@
 import Header from "../Components/Header"
+import Header2 from "../Components/Header2"
 import SideBar from "../Components/SideBar"
 
 const Baselayout = ({children}) => {
     return(
-        <>
-            <div>
-                <div className="flex flex-row">
+            <div className="flex flex-row">
                 <SideBar />
-                <Header />
-                </div>
-                <div>
+                <div className="flex flex-col w-full">
+                    <Header />
                     {children}
                 </div>
-            </div>
-        
-        </>
+            </div> 
     )
 }
 
-export default Baselayout
+export default Baselayout;
