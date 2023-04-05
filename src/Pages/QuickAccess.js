@@ -6,7 +6,7 @@ const QuickAccess = () => {
         <div className={`p-8 ml-10`}>
         <SearchBar />
         <h1 className={`text-left text-xl text-dark-blue font-bold font-poppins px-2 pt-10 pb-5`}>Quick Access</h1>
-        <div className={`grid grid-cols-2 gap-12 mr-3`}>
+        <div className={`grid lg:grid-cols-2 sm:grid-cols-1 gap-12 mr-3`}>
             <div className="shadow-md rounded-md hover:shadow-xl">
                 <h1 className={`text-left text-dark-blue font-bold font-poppins px-5 py-5 mx-5 my-5`}>Attendance List</h1>
                 <div className="flex flex-row items-center">

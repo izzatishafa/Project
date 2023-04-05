@@ -12,14 +12,15 @@ const Header = () => {
 
   return (
     <div className="w-full h-24 px-8 flex justify-between items-center">
-      <div className="font-bold font-poppins text-dark-blue text-3xl">
+      <div className="font-bold font-poppins text-dark-blue lg:text-3xl sm:text-lg">
         Hello, Maccaroni El Matadore
       </div>
       <div className="flex flex-row">
-        <div className="flex flex-col text-s font-bold font-poppins text-right">
+        <div className="flex flex-col font-bold font-poppins text-right lg:text-base sm:text-xs lg:mt-0 sm:mt-[10px]"> 
           <p>Magang</p>
           <p>Bootcamp</p>
         </div>
+
         <button
           className="relative rounded-full w-20 h-14 mx-2 cursor-pointer"
           onClick={togglePopup}
@@ -27,7 +28,7 @@ const Header = () => {
           <img
           src={profile}
           alt="profile"
-          className="rounded-full w-14 h-14 mx-2 cursor-pointer"
+          className="rounded-full lg:w-14 lg:h-14 sm:w-8 sm:h-8 mx-2 cursor-pointer"
           onClick={togglePopup}
         />
           {isPopupOpen && (

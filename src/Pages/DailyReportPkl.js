@@ -16,8 +16,8 @@ const DailyReportPkl = () => {
             <table className="table-auto w-full">
                 <thead className={`bg-slate-gray`}>
                     <tr>
-                    <th className={`font-poppins text-white font-thin w-1/5`}>DATE</th>
-                    <th className={`font-poppins text-white font-thin w-3/5`}>ACTIVITY</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-xs w-1/5`}>DATE</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-xs w-3/5`}>ACTIVITY</th>
                     <th className={``}>
                     <div className={`flex justify-center items-center p-2`}>
                         <div className="flex flex-row justify-center items-center text-white font-thin">

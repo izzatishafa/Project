@@ -13,14 +13,14 @@ const DailyReportMagang = () => {
       <SearchBar />
       </div>
       <AddBtn />
-      <div className="pr-10 pl-20 pt-4">
+      <div className="pr-10 lg:pl-20 sm:pl-10 pt-4">
             <table className="table-auto w-full">
                 <thead className={`bg-slate-gray`}>
                     <tr>
-                    <th className={`font-poppins text-white font-thin`}>DATE</th>
-                    <th className={`font-poppins text-white font-thin`}>TASK</th>
-                    <th className={`font-poppins text-white font-thin`}>PROJECT</th>
-                    <th className={`font-poppins text-white font-thin`}>STATUS</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm`}>DATE</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm`}>TASK</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm`}>PROJECT</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm`}>STATUS</th>
                     <th className={``}>
                     <div className={`flex justify-center items-center p-2`}>
                         <div className="flex flex-row justify-center items-center text-white font-thin">

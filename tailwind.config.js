@@ -9,7 +9,8 @@ module.exports = {
         "dark-blue": "#001E3F",
         "card-blue": "#17A2B8",
         "light-blue": "#5E81FF",
-        "cardbtn-blue": "##60bac8",
+        "cardbtn-blue": "#60bac8",
+        "hv-btn-blue": "#7bc1cc",
         "hv-light-blue": '#7392ff',
         "dark-gray": "#717171",
         "slate-gray": "#4B4B4B",
@@ -19,14 +20,26 @@ module.exports = {
         "red": "#C72929",
         "card-red": "#C53838",
         "cardbtn-red": "#dc8888",
+        "hv-btn-red": "#e28f8f",
         "hv-red" : "#cc3737",
         "green": "#30C04F",
         "card-green": "#28A745",
         "cardbtn-green": "#5ebc74",
+        "hv-btn-green": "#6ac07e",
         "coral": "#EA5455",
         "cyan": "#00CFE8",
         "hv-cyan": "#0dd7ef"
       },
+      screens: {
+        'xs': '320px',
+        'sm': '480px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
+
+
       fontFamily: {
         'patua': ['Patua One', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
@@ -34,7 +47,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 }
 
 

@@ -32,9 +32,9 @@ const PresensiIzin = () => {
                     </div>
                     <div className="flex flex-row items-center px-16">
                         <div className="flex flex-row items-center gap-4">
-                        <ReactDatePicker placeholder="Pilih Tanggal"/>
+                        <ReactDatePicker placeholder="Pilih Tanggal" starRightMargin={14} />
                         <p className='text-2xl'>-</p>
-                        <ReactDatePicker placeholder="Sampai Tanggal"/>
+                        <ReactDatePicker placeholder="Sampai Tanggal" starRightMargin={11} />
                         </div>
                         </div>
                         <SubmitBtn marginTop="5" />

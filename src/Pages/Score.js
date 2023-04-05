@@ -12,10 +12,10 @@ const Score = () => {
             <table className="table-auto w-full">
                 <thead className={`bg-slate-gray`}>
                     <tr>
-                    <th className={`font-poppins text-white font-thin text-sm p-2 w-1/5`}>DATE</th>
-                    <th className={`font-poppins text-white font-thin text-sm p-2 w-2/5`}>TASK</th>
-                    <th className={`font-poppins text-white font-thin text-sm p-2 w-1/5`}>SCORE</th>
-                    <th className={`font-poppins text-white font-thin text-sm p-2 w-1/5`}>SCORE NUM</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm p-2 w-1/5`}>DATE</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm p-2 w-2/5`}>TASK</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm p-2 w-1/5`}>SCORE</th>
+                    <th className={`font-poppins text-white font-thin lg:text-base sm:text-sm p-2 w-1/5`}>SCORE NUM</th>
                     </tr>
                 </thead>
                 <tbody>

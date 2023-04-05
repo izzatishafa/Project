@@ -10,7 +10,7 @@ import edit from "../Assets/edit2.png"
 const HomeAdmin = () => {
   return (
     <div className="p-8 ml-10">
-      <div className="grid grid-cols-3 gap-5 mx-12 mb-6">
+      <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-5 mx-12 mb-6">
             <div className="rounded-md">
               <div className={`bg-card-blue rounded-tl-md rounded-tr-md`}>
                   <div className="flex flex-row justify-between items-center p-5 ">
@@ -21,7 +21,7 @@ const HomeAdmin = () => {
                       <img src={user} alt="" className="w-14" />
                   </div>
               </div>
-              <button className={`w-full rounded-br-md rounded-bl-md bg-blue-300 font-poppins font-thin text-sm text-white flex items-center justify-center py-1 px-24`}>
+              <button className={`w-full hover:bg-hv-btn-blue rounded-br-md rounded-bl-md bg-cardbtn-blue font-poppins font-thin text-sm text-white flex items-center justify-center py-1 px-24`}>
                 More Info
                 <img src={arrow} alt="" className="ml-2 w-4" />
               </button>
@@ -36,7 +36,7 @@ const HomeAdmin = () => {
                       <img src={calendar} alt="" className="w-14" />
                   </div>
               </div>
-              <button className={`w-full rounded-br-md rounded-bl-md bg-cardbtn-green font-poppins font-thin text-sm text-white flex items-center justify-center py-1 px-24`}>
+              <button className={`w-full hover:bg-hv-btn-green rounded-br-md rounded-bl-md bg-cardbtn-green font-poppins font-thin text-sm text-white flex items-center justify-center py-1 px-24`}>
                 More Info
                 <img src={arrow} alt="" className="ml-2 w-4" />
               </button>
@@ -51,15 +51,15 @@ const HomeAdmin = () => {
                       <img src={edit} alt="" className="w-14" />
                   </div>
               </div>
-              <button className={`w-full rounded-br-md rounded-bl-md bg-cardbtn-red font-poppins font-thin text-sm text-white flex items-center justify-center py-1 px-24`}>
+              <button className={`w-full hover:bg-hv-btn-red rounded-br-md rounded-bl-md bg-cardbtn-red font-poppins font-thin text-sm text-white flex items-center justify-center py-1 px-24`}>
                 More Info
                 <img src={arrow} alt="" className="ml-2 w-4" />
               </button>
             </div>
       </div>
 
-    <div className={`grid grid-cols-2 gap-12 mr-3`}>
-            <div className="shadow-md rounded-md">
+    <div className={`grid lg:grid-cols-2 sm:grid-cols-1 gap-12 mr-3`}>
+            <div className="shadow-md rounded-md hover:shadow-xl">
                 <h1 className={`text-left text-dark-blue font-bold font-poppins px-5 py-5 mx-5 my-5`}>Attendance List</h1>
                 <div className="flex flex-row items-center">
                     <div>
@@ -89,7 +89,7 @@ const HomeAdmin = () => {
                     </div>
                 </div>
             </div>
-            <div className="shadow-md rounded-md">
+            <div className="shadow-md rounded-md hover:shadow-xl">
                 <h1 className={`text-left text-dark-blue font-bold font-poppins px-5 py-5 mx-5 my-5`}>Daily Report</h1>
                 <div className="flex flex-row items-center ml-10 my-3">
                     <div>
@@ -131,7 +131,7 @@ const HomeAdmin = () => {
                     </div>
                 </div>
             </div>
-            <div className="shadow-md rounded-md">
+            <div className="shadow-md rounded-md hover:shadow-xl">
                 <h1 className={`text-left text-dark-blue font-bold font-poppins px-5 py-5 mx-5 my-5`}>Notifications</h1>
                 <div className="flex flex-row items-center">
                     <div>
@@ -161,7 +161,7 @@ const HomeAdmin = () => {
                     </div>
                 </div>
             </div>
-            <div className="shadow-md rounded-md pb-5 mb-2">
+            <div className="shadow-md rounded-md hover:shadow-xl pb-5 mb-2">
                 <h1 className={`text-left text-dark-blue font-bold font-poppins px-5 py-5 mx-5 my-5`}>Agenda</h1>
                 <div className="flex flex-row items-center">
                     <div>

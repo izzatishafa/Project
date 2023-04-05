@@ -28,8 +28,8 @@ const Calendar = () => {
 
     return (
 
-      <div className="flex flex-col px-28 pt-4 pb-32 h-screen">
-        <h1 className={`text-4xl pb-11 font-roboto-mono font-extrabold flex justify-center`}>
+      <div className="flex flex-col lg:px-28 sm:px-5 pt-4 pb-32 mb-5 h-screen">
+        <h1 className={`lg:text-4xl sm:text-3xl pb-11 font-roboto-mono font-extrabold flex justify-center`}>
           {format(currentDate, "MMMM yyyy")}
         </h1>
         <div className="shadow-2xl rounded-md">

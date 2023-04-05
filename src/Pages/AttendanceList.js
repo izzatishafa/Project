@@ -31,7 +31,7 @@ const AttendanceList = () => {
                     </div>
                </div>
             </div>
-            <div className={`grid grid-cols-2 gap-4 ml-20 mr-10 my-10`}>
+            <div className={`grid lg:grid-cols-2 sm:grid-cols-1 gap-4 ml-20 mr-10 my-10`}>
                 <div className="shadow-md rounded-md">
                     <h1 className={`text-dark-blue text-left font-poppins font-bold px-5 py-5 mx-5 my-2`}>Riwayat Kehadiran</h1>
                     <div className="flex flex-row items-center pl-5">

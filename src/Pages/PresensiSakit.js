@@ -1,4 +1,3 @@
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import profile from '../Assets/pict2.jpg'
@@ -32,9 +31,17 @@ const PresensiSakit = () => {
                     </div>
                     <div className="flex flex-row items-center px-16 gap-5">
                         <UploadBtn />
-                        <ReactDatePicker placeholder="Pilih Tanggal"/>
+                        {/* <ReactDatePicker 
+                        placeholder={
+                            <span>
+                                Pilih Tanggal
+                                <span className="text-red-500">*</span>
+                            </span>
+                        } 
+                        /> */}
+                        <ReactDatePicker placeholder="Pilih Tanggal" />
                         <p className='text-2xl'>-</p>
-                        <ReactDatePicker placeholder="Sampai Tanggal"/>
+                        <ReactDatePicker placeholder="Sampai Tanggal" />
                         </div>
                         <SubmitBtn marginTop="5" />
                 </div>

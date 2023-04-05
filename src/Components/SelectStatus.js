@@ -16,7 +16,7 @@ const SelectStatus = () => {
         <Select
             options={options}
             placeholder="Pilih Status"
-            className={`w-full border-thin rounded-lg placeholder-light-gray font-poppins outline-none my-2`}
+            className={`border-thin rounded-lg placeholder-light-gray font-poppins outline-none my-2`}
         />
         </div>
     )
