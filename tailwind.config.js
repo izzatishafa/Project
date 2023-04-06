@@ -32,7 +32,7 @@ module.exports = {
       },
       screens: {
         'xs': '320px',
-        'sm': '480px',
+        'sm': '411px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
@@ -43,7 +43,8 @@ module.exports = {
       fontFamily: {
         'patua': ['Patua One', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
-        'roboto-mono': ['Roboto Mono', 'monospace']
+        'roboto-mono': ['Roboto Mono', 'monospace'],
+        'spectral': ['Spectral', 'serif']
       },
     },
   },

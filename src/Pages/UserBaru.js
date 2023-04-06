@@ -2,6 +2,7 @@ import SubmitBtn from '../Components/SubmitBtn'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import SelectCategory from '../Components/SelectCategory'
+import ProfilePicture from '../Components/ProfilePict'
 
 const UserBaru = () => {
     return (
@@ -16,14 +17,13 @@ const UserBaru = () => {
                         <input type="text" placeholder="contoh nama lengkap" className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`} />
                         <p className={`font-poppins text-black pt-2`}>Kategori <span className="text-red">*</span></p>
                         <SelectCategory />
-                        <p className={`font-poppins text-black pt-2`}>Username <span className="text-red">*</span></p>
-                        <input type="text" placeholder="contoh username" className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`} />
+                        <p className={`font-poppins text-black pt-2`}>Email Aktif <span className="text-red">*</span></p>
+                        <input type="text" placeholder="contoh email@gmail.com" className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`} />
                         <p className={`font-poppins text-black pt-2`}>Password <span className="text-red">*</span></p>
                         <input type="password" placeholder="contoh password" className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`} />
                 </div>
                 <div className="flex flex-col px-14 w-full">
-                        <p className={`font-poppins text-black lg:pt-2 sm:pt-0`}>Email Aktif</p>
-                        <input type="email" placeholder="contoh email@gmail.com" className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`} />
+                        <ProfilePicture />
                         <p className={`font-poppins text-black pt-2`}>No. Whatsapp</p>
                         <input type="text" placeholder="08123456789" className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`} />
                         <p className={`font-poppins text-black pt-2`}>Asal Sekolah</p>
