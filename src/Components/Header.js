@@ -32,14 +32,14 @@ const Header = () => {
           onClick={togglePopup}
         />
           {isPopupOpen && (
-            <div className="absolute right-14 top-20 z-50 bg-white shadow-lg rounded-md px-4 py-2 w-36 text-gray-800">
-              <div className="mb-2">
+            <div className="absolute right-14 top-20 z-50 bg-white shadow-lg rounded-md w-36 text-gray-800 ">
+              <div className="py-2 px-4 hover:bg-dark-blue hover:text-white hover:rounded-md">
                 <button className="flex flex-row font-bold text-sm">
                   <FontAwesomeIcon icon={faGear} className="mr-2" />
                   Settings
                 </button>
               </div>
-              <div>
+              <div className="py-2 px-4 hover:bg-dark-blue hover:text-white hover:rounded-md">
                 <button className="flex flex-row font-bold text-sm">
                   <FontAwesomeIcon icon={faRightFromBracket} className="mr-2" />
                   Log out
