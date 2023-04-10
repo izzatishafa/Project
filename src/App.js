@@ -1,9 +1,5 @@
 import { Switch, Route, Redirect} from 'react-router-dom'
 import Baselayout from './Pages/BaseLayout'
-import PresensiSakit from './Pages/PresensiSakit'
-import PresensiIzin from './Pages/PresensiIzin'
-import LaporanMagangBootcamp from './Pages/LaporanMagangBootcamp'
-import LaporanMagangPkl from './Pages/LaporanMagangPkl'
 import ManagementAgenda from './Pages/ManagementAgenda'
 import ManagementUser from './Pages/ManagementUser'
 import UserBaru from './Pages/UserBaru'
@@ -15,7 +11,8 @@ import { router } from './routes'
 import { lazy } from 'react'
 import { useState } from 'react'
 import DailyReportAdmin from './Pages/DailyReportAdmin'
-
+import Agenda2 from './Pages/Agenda2'
+import HomeAdmin from './Pages/HomeAdmin'
 
 const authRoutes = [
   {
@@ -82,7 +79,8 @@ function App() {
       </Switch>
 
 
-      {/* <Baselayout> */}
+      {/* <Baselayout>
+      <HomeAdmin /> */}
         {/* <Switch>
           <Route exact path="/" component={QuickAccess} />
           <Route path="/attendance-list" component={AttendanceList} />

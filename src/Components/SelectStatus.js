@@ -2,12 +2,11 @@ import Select from 'react-select';
 
 
 const options = [
-    { value: 'option1', label: 'Progress' },
-    { value: 'option2', label: 'Ready for Deploy' },
-    { value: 'option3', label: 'Ready for Test' },
-    { value: 'option3', label: 'Issue'},
-    { value: 'option3', label: 'Done'},
-    { value: 'option3', label: 'Other'}
+    { value: 'ON_PROGRESS', label: 'On Progress' },
+    { value: 'READY_FOR_DEPLOY', label: 'Ready for Deploy' },
+    { value: 'READY_FOR_TEST', label: 'Ready for Test' },
+    { value: 'PENDING', label: 'Pending'},
+    { value: 'DONE', label: 'Done'},
   ];
 
 const SelectStatus = () => {

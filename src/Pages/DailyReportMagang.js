@@ -34,7 +34,7 @@ const DailyReportMagang = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Brief pengerjaan project</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>PB Taxand</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Done</td>
@@ -43,7 +43,7 @@ const DailyReportMagang = () => {
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Brief pengerjaan project</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>PB Taxand</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Done</td>
@@ -52,7 +52,7 @@ const DailyReportMagang = () => {
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Brief pengerjaan project</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>PB Taxand</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Done</td>
@@ -61,7 +61,7 @@ const DailyReportMagang = () => {
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Brief pengerjaan project</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>PB Taxand</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Done</td>
@@ -70,7 +70,7 @@ const DailyReportMagang = () => {
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Brief pengerjaan project</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>PB Taxand</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Done</td>

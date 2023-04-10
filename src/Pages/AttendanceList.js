@@ -40,7 +40,7 @@ const AttendanceList = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 20 Mar 2023</p>
                     </div>
                     </div>
                     <div className="flex flex-row items-center pl-5">
@@ -49,7 +49,7 @@ const AttendanceList = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 20 Mar 2023</p>
                     </div>
                     </div>
                     <div className="flex flex-row items-center pl-5">
@@ -58,7 +58,7 @@ const AttendanceList = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 20 Mar 2023</p>
                     </div>
                     </div>
                     <div className="flex flex-row items-center pl-5">
@@ -67,7 +67,7 @@ const AttendanceList = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 20 Mar 2023</p>
                     </div>
                     </div>
                     <div className="flex flex-row items-center pl-5">
@@ -76,7 +76,7 @@ const AttendanceList = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins font-thin`}>17.00 WIB - 20 Mar 2023</p>
                     </div>
                     </div>
                 </div>

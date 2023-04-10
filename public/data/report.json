@@ -1,0 +1,123 @@
+{"data": [
+    {
+      "DATE": "2023-03-04", 
+      "NAME": "Macaroni El Matadore",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "ON_PROGRESS",
+      "LAMPIRAN": ["assets/images/bootcamp.png", "assets/images/bootcamp.png"],
+      "DESC": "",
+      "KENDALA": "Dita Tidur",
+      "POSITION": "Bootcamp"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Fatima Rusalka",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "DONE",
+      "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
+      "DESC": "Ngetes Taxand",
+      "KENDALA": "",
+      "POSITION": "PKL"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Jane Doe",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "PENDING",
+      "LAMPIRAN": ["assets/images/bootcamp.png", "assets/images/bootcamp.png"],
+      "DESC": "",
+      "KENDALA": "Arafat gitaran",
+      "POSITION": "Bootcamp"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Tole",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "READY_FOR_DEPLOY",
+      "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
+      "DESC": "Ngetes Data",
+      "KENDALA": "",
+      "POSITION": "PKL"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Macaroni El Matadore",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "READY_FOR_TEST",
+      "LAMPIRAN": ["assets/images/bootcamp.png", "assets/images/bootcamp.png"],
+      "DESC": "",
+      "KENDALA": "Mas Mukhlis Ngerokok",
+      "POSITION": "Bootcamp"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Fatima Rusalka",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "DONE",
+      "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
+      "DESC": "Mengoreksi Soal",
+      "KENDALA": "",
+      "POSITION": "PKL"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Tole",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "ON_PROGRESS",
+      "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
+      "DESC": "-",
+      "KENDALA": "Mengoreksi Soal",
+      "POSITION": "PKL"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Tole",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "ON_PROGRESS",
+      "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
+      "DESC": "-",
+      "KENDALA": "Mengoreksi Soal",
+      "POSITION": "PKL"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Fatima Rusalka",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "ON_PROGRESS",
+      "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
+      "DESC": "-",
+      "KENDALA": "Mengoreksi Soal",
+      "POSITION": "PKL"
+    },
+    {
+      "DATE": "2023-03-04",
+      "NAME": "Avatar",
+      "ACTIVITY": "Membuat CRUD",
+      "TITLE": "Brief Pengerjaan Project",
+      "PROJECT": "PB Taxand",
+      "STATUS": "ON_PROGRESS",
+      "LAMPIRAN": ["assets/images/bootcamp.png", "assets/images/bootcamp.png"],
+      "DESC": "",
+      "KENDALA": "Mikho Beli Makan",
+      "POSITION": "Bootcamp"
+    }
+
+  ]}

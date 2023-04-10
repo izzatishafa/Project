@@ -20,31 +20,31 @@ const Score = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>Membuat CRUD</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>B</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>85</td>
                 </tr>
                 <tr>
-                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>Membuat CRUD</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>B</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>85</td>
                 </tr>
                 <tr>
-                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>Membuat CRUD</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>B</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>85</td>
                 </tr>
                 <tr>
-                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>Membuat CRUD</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>B</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>85</td>
                 </tr>
                 <tr>
-                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>23 Mar 2023</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>Membuat CRUD</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>B</td>
                     <td className={`border px-4 py-3 text-center font-poppins text-light-gray text-sm`}>85</td>

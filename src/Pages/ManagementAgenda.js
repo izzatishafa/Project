@@ -21,16 +21,16 @@ function ManagementAgenda() {
     }
   
     const agenda = [
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Belum Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
-      { DATE: '4/3/2023', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' }
+      { DATE: '2023-03-04', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Belum Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' },
+      { DATE: '2023-03-01', AGENDA: 'Presentasi Tugas Akhir Mini Project', STATUS: 'Terlaksana' }
     ];
   
     const totalPages = Math.ceil(agenda.length / showPerPage);

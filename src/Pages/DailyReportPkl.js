@@ -31,28 +31,28 @@ const DailyReportPkl = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>2023-03-23</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Hands-on coding JavaScript</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>
                     <TwinButton />
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>2023-03-23</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Hands-on coding JavaScript</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>
                     <TwinButton />
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>2023-03-23</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Hands-on coding JavaScript</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>
                     <TwinButton />
                     </td>
                     </tr>
                     <tr>
-                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>3/23/2023</td>
+                    <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>2023-03-23</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>Hands-on coding JavaScript</td>
                     <td className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}>
                     <TwinButton />

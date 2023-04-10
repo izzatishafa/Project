@@ -1,9 +1,9 @@
-import Calendar from "../Components/Calendar"
+import Calendar2 from "../Components/Calendar2"
 
 const Agenda = () => {
     return (
-        <div>
-            <Calendar date={new Date()} />
+        <div className="flex flex-col p-10">
+            <Calendar2 />
         </div>
     )
 }

@@ -15,7 +15,7 @@ const QuickAccess = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>08.00 WIB - 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>08.00 WIB - 20 Mar 2023</p>
                     </div>
                 </div>
                 <div className="flex flex-row items-center">
@@ -24,7 +24,7 @@ const QuickAccess = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Maccaroni El Matadore</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>17.00 WIB - 3/19/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>17.00 WIB - 19 Mar 2023</p>
                     </div>
                 </div>
             </div>
@@ -33,19 +33,19 @@ const QuickAccess = () => {
                 <div className="flex flex-row items-center ml-10 my-3">
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Membuat auth menggunakan...</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>Senin 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>Senin 20/03/2023</p>
                     </div>
                 </div>
                 <div className="flex flex-row items-center ml-10 my-3">
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Membuat auth menggunakan...</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>Senin 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>Senin 20/03/2023</p>
                     </div>
                 </div>
                 <div className="flex flex-row items-center ml-10 my-3">
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Membuat auth menggunakan...</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>Senin 3/20/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>Senin 20/03/2023</p>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@ const QuickAccess = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Presentasi Tugas ...</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>11.40 WIB - 3/21/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>11.40 WIB - 21/03/2023</p>
                     </div>
                 </div>
                 <div className="flex flex-row items-center">
@@ -117,7 +117,7 @@ const QuickAccess = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Presentasi Tugas ...</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>11.40 WIB - 3/21/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>11.40 WIB - 21/03/2023</p>
                     </div>
                 </div>
                 <div className="flex flex-row items-center">
@@ -126,7 +126,7 @@ const QuickAccess = () => {
                     </div>
                     <div>
                         <p className={`text-dark-gray font-poppins`}>Presentasi Tugas ...</p>
-                        <p className={`text-sm text-left text-light-gray font-poppins`}>11.40 WIB - 3/21/2023</p>
+                        <p className={`text-sm text-left text-light-gray font-poppins`}>11.40 WIB - 21/03/2023</p>
                     </div>
                 </div>
             </div>
