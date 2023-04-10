@@ -110,7 +110,7 @@ const HomeAdmin = () => {
                     </div>
                 </div>
             </div>
-            <div className="shadow-md rounded-md">
+            <div className="shadow-md rounded-md hover:shadow-xl">
                 <h1 className={`text-left text-dark-blue font-bold font-poppins px-5 py-5 mx-5 my-5`}>Score</h1>
                 <div className="flex flex-row items-center ml-10 my-3">
                     <div>
