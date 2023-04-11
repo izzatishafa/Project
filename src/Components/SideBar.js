@@ -104,37 +104,38 @@ const SideBar = ({pathname}) => {
                 font-medium overflow-x-hidden">
                     <li className="">
                     <NavLink exact to="/" className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/'}>
-                        <FiHome size={23} color={location.pathname === '/' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/>
+                        {/* <FiHome size={23} color={location.pathname === '/' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/> */}
+                        <FiHome size={23} color={location.pathname === '/' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max" title="Home" />
                         <p className={`font-poppins text-[16px] font-bold ${location.pathname === '/' ? 'text-dark-blue' : 'text-light-gray'}`}>Home</p>
                     </NavLink>
                     </li>
                     <li className="">
                     <NavLink exact to="/attendance-list" className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/attendance-list'}>
-                        <BsCheck2Circle size={25} color={location.pathname === '/attendance-list' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/>
+                        <BsCheck2Circle size={25} color={location.pathname === '/attendance-list' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max" title="Attendance List" />
                         <p className={`font-poppins text-[16px] font-bold ${location.pathname === '/attendance-list' ? 'text-dark-blue' : 'text-light-gray'}`}>Attendance List</p>
                     </NavLink>
                     </li>
                     <li className="">
                     <NavLink exact to="/daily-report-magang" className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/daily-report-magang'}>
-                        <FiEdit size={23} color={location.pathname === '/daily-report-magang' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/>
+                        <FiEdit size={23} color={location.pathname === '/daily-report-magang' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max" title="Daily Report" />
                         <p className={`font-poppins text-[16px] font-bold ${location.pathname === '/daily-report-magang' ? 'text-dark-blue' : 'text-light-gray'}`}>Daily Report</p>
                     </NavLink>
                     </li>
                     <li className="">
                     <NavLink exact to="/score" className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/score'}>
-                        <FiShoppingBag size={23} color={location.pathname === '/score' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/>
+                        <FiShoppingBag size={23} color={location.pathname === '/score' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max" title="Score" />
                         <p className={`font-poppins text-[16px] font-bold ${location.pathname === '/score' ? 'text-dark-blue' : 'text-light-gray'}`}>Score</p>
                     </NavLink>
                     </li>
                     <li className="">
                     <NavLink exact to="/notifications" className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/notifications'}>
-                        <FiBell size={23} color={location.pathname === '/notifications' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/>
+                        <FiBell size={23} color={location.pathname === '/notifications' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max" title="Notifications"/>
                         <p className={`font-poppins text-[16px] font-bold ${location.pathname === '/notifications' ? 'text-dark-blue' : 'text-light-gray'}`}>Notifications</p>
                     </NavLink>
                     </li>
                     <li className="">
                     <NavLink exact to="/agenda" className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/agenda'}>
-                        <FiCalendar size={23} color={location.pathname === '/agenda' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/>
+                        <FiCalendar size={23} color={location.pathname === '/agenda' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max" title="Agenda"/>
                         <p className={`font-poppins text-[16px] font-bold ${location.pathname === '/agenda' ? 'text-dark-blue' : 'text-light-gray'}`}>Agenda</p>
                     </NavLink>
                     <div className="pl-5 hidden lg:block lg:w-[240px]">
