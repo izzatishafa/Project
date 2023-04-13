@@ -1,5 +1,3 @@
-import AddBtn from "../Components/AddBtn"
-import ViewBtn from "../Components/ViewBtn"
 import Calendar2 from "../Components/Calendar2"
 
 const Agenda = () => {

@@ -25,8 +25,9 @@ const authRoutes = [
 
 function App() {
   const { pathname } = window.location;
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState()
   const BaseLayout = lazy(() => import('./Pages/BaseLayout'))
+  
 
 
   return (
@@ -79,19 +80,7 @@ function App() {
       </Switch>
 
 
-      {/* <Baselayout>
-      <HomeAdmin /> */}
-        {/* <Switch>
-          <Route exact path="/" component={QuickAccess} />
-          <Route path="/attendance-list" component={AttendanceList} />
-          <Route path="/daily-report-magang" component={DailyReportMagang} />
-          <Route path="/score" component={Score} />
-          <Route path="/notifications" component={Notifications} />
-          <Route path="/agenda" component={Agenda} />
-        </Switch> */}
 
-
-        {/* </Baselayout> */}
         
     </div>
   );

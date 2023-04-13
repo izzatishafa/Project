@@ -3,11 +3,20 @@ import PasswordInput from '../Components/PasswordInput';
 import ProfilePicture from '../Components/ProfilePict';
 import SubmitBtn from "../Components/SubmitBtn"
 import BackBtn from "../Components/BackBtn"
+import { supabase } from '../supabaseClient';
 import { useState } from 'react';
 
 
 
 export default function LoginPage () {
+  const [session, setSession] = useState(null)
+
+  async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: 'example@email.com',
+      password: 'example-password',
+    })
+  }
 
   const [currentSlide, setCurrentSlide] = useState(1);
 
@@ -51,7 +60,7 @@ export default function LoginPage () {
           </div>
           <div className="px-24">
             <SubmitBtn onClick={handleNext} text="Submit" marginTop={8} />       
-            <BackBtn onClick={handlePrev} /> 
+            <BackBtn onClick={handlePrev} />
           </div>
         </div>
     );
@@ -59,13 +68,13 @@ export default function LoginPage () {
     case 3:
       content = (
         <div className="w-full h-screen flex flex-col justify-center">
-                <div className="flex flex-col px-44 w-full">
+                <div className="flex flex-col py-3 px-44 w-full">
                     <label className="text-dark-blue font-poppins font-thin text-sm pb-2">Password Baru</label>
                     <PasswordInput />
                     <label className="text-dark-blue font-poppins font-thin text-sm py-2">Konfirmasi password Baru</label>
                     <PasswordInput />
                 </div>
-                <div className="px-24">
+                <div className="pt-5 px-24">
                 <SubmitBtn onClick={handleNext} text="confirm"/>
                 <BackBtn onClick={handlePrev} />
                 </div>
