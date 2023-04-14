@@ -2,17 +2,12 @@ import { Switch, Route, Redirect} from 'react-router-dom'
 import Baselayout from './Pages/BaseLayout'
 import ManagementAgenda from './Pages/ManagementAgenda'
 import ManagementUser from './Pages/ManagementUser'
-import UserBaru from './Pages/UserBaru'
-import AgendaBaru from './Pages/AgendaBaru'
 import LoginPage from './Pages/LoginPage'
 import Preloader from './Components/Preloader'
 import { Suspense } from 'react'
 import { router } from './routes'
 import { lazy } from 'react'
 import { useState } from 'react'
-import DailyReportAdmin from './Pages/DailyReportAdmin'
-import Agenda2 from './Pages/Agenda2'
-import HomeAdmin from './Pages/HomeAdmin'
 
 const authRoutes = [
   {

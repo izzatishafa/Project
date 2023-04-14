@@ -12,7 +12,7 @@ function PasswordInput(props) {
     <div className="relative bg-gray-100 rounded-md p-1">
       <input
         type={showPassword ? "password" : "text"}
-        placeholder=""
+        placeholder={props.placeholder}
         className="w-[270px] pl-1 bg-gray-100 font-poppins text-xs rounded-md outline-none"
         {...props}
       />

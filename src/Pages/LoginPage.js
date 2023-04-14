@@ -10,17 +10,23 @@ import { useState } from 'react';
 
 export default function LoginPage () {
   const [session, setSession] = useState(null)
-
+  const [userCredential, setUserCredential] = useState({
+    email: '',
+    password: ''})
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithPassword({
-      email: 'example@email.com',
-      password: 'example-password',
+      email: 'izzatishafa2@gmail.com',
+      password: 'Password1!',
     })
+    console.log(data)
   }
 
   const [currentSlide, setCurrentSlide] = useState(1);
-
+  const handleInput = (e) => {
+    setUserCredential(prev => ({...prev, [e.target.name]: e.target.value}))
+  }
   const handleNext = () => {
+    signInWithEmail()
     setCurrentSlide(currentSlide + 1);
   }
 
@@ -33,13 +39,14 @@ export default function LoginPage () {
     case 1: 
     content = (
       <div className="w-full h-screen flex flex-col justify-center">
+        {JSON.stringify(userCredential)}
           <div className="flex flex-col px-44">
             <h1 className="text-dark-blue text-[25px] text-left font-poppins font-black pb-1">Selamat Datang</h1>
             <h2 className="text-dark-blue text-[15px] text-left font-poppins font-bold pb-8">Silahkan login untuk melanjutkan aktivitas</h2>
             <label className="text-dark-blue font-poppins font-thin text-sm pb-1">Email</label>
-            <input type="email" placeholder="contoh email@gmail.com" className="bg-gray-100 font-poppins text-xs rounded-md p-2 mb-3 outline-none" />
+            <input type="email" placeholder="contoh email@gmail.com" name= 'email' onChange={handleInput} value={userCredential.email} className="bg-gray-100 font-poppins text-xs rounded-md p-2 mb-3 outline-none" />
             <label className="text-dark-blue font-poppins font-thin text-sm pb-1">Password</label>
-            <PasswordInput />
+            <PasswordInput placeholder="contoh password" name= 'password' onChange={handleInput} value={userCredential.password} />
             <button onClick={handleNext} className="bg-light-blue hover:bg-hv-light-blue p-1.5 text-md text-white font-poppins bold rounded-md my-5 mb-3">Sign In</button>
             <p className="text-center py-1 font-spectral text-[#22C1DC] hover:text-[#2dcee9] cursor-pointer">Forgot password?</p>
           </div>
@@ -70,9 +77,9 @@ export default function LoginPage () {
         <div className="w-full h-screen flex flex-col justify-center">
                 <div className="flex flex-col py-3 px-44 w-full">
                     <label className="text-dark-blue font-poppins font-thin text-sm pb-2">Password Baru</label>
-                    <PasswordInput />
+                    <PasswordInput placeholder="" />
                     <label className="text-dark-blue font-poppins font-thin text-sm py-2">Konfirmasi password Baru</label>
-                    <PasswordInput />
+                    <PasswordInput placeholder="" />
                 </div>
                 <div className="pt-5 px-24">
                 <SubmitBtn onClick={handleNext} text="confirm"/>
