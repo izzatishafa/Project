@@ -7,7 +7,8 @@ import Preloader from './Components/Preloader'
 import { Suspense } from 'react'
 import { router } from './routes'
 import { lazy } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { supabase } from './supabaseClient'
 
 const authRoutes = [
   {
@@ -23,6 +24,14 @@ function App() {
   const [login, setLogin] = useState()
   const BaseLayout = lazy(() => import('./Pages/BaseLayout'))
   
+  useEffect(() => {
+    const checkLoginSession = async () => {
+      const session = await supabase.auth.getSession()
+      console.log(session.data)
+      return !!session.data.session
+    }
+    setLogin(checkLoginSession())
+  }, [])
 
 
   return (
