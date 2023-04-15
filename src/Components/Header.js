@@ -11,9 +11,16 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  const handleLogOut = async () => {
-    const { error } = await supabase.auth.signOut();
-  };
+  // const handleLogOut = async () => {
+  //   const { error } = await supabase.auth.signOut();
+  //   console.log('success');
+  // };
+
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut()
+    if (error) console.log('Error signing out:', error.message)
+    else console.log('Signed out successfully')
+  }
 
   return (
     <div className="w-full h-24 px-8 flex justify-between items-center">
@@ -46,7 +53,7 @@ const Header = () => {
               </div>
               <div className="py-2 px-4 hover:bg-dark-blue hover:text-white hover:rounded-md">
                 <button
-                  onClick={handleLogOut}
+                  onClick={handleSignOut}
                   className="flex flex-row font-bold text-sm"
                 >
                   <FontAwesomeIcon icon={faRightFromBracket} className="mr-2" />

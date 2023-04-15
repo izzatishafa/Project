@@ -10,3 +10,6 @@
       display: none;
     }
 }
+.custom-calendar .rbc-toolbar-label {
+  font-size: 35px;
+}

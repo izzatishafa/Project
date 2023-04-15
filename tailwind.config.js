@@ -44,7 +44,7 @@ module.exports = {
         'patua': ['Patua One', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
         'roboto-mono': ['Roboto Mono', 'monospace'],
-        'spectral': ['Spectral', 'serif']
+        'spectral': ['Spectral', 'serif'],
       },
     },
   },

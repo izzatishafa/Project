@@ -4,6 +4,7 @@ import ManagementAgenda from './Pages/ManagementAgenda'
 import ManagementUser from './Pages/ManagementUser'
 import LoginPage from './Pages/LoginPage'
 import Preloader from './Components/Preloader'
+import Agenda2 from './Pages/Agenda2'
 import { Suspense } from 'react'
 import { router } from './routes'
 import { lazy } from 'react'
@@ -36,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
+      {/* <Switch>
       <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
             {authRoutes.map((route) => (
               <Route
@@ -81,7 +82,11 @@ function App() {
           }}/>
 
         ))}
-      </Switch>
+      </Switch> */}
+
+      <Baselayout>
+      <Agenda2 />
+      </Baselayout>
 
 
 

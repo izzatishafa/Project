@@ -3,6 +3,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { useState } from "react";
 import moment from "moment";
+import '../index.css';
 
 const localizer = momentLocalizer(moment);
 
@@ -14,6 +15,7 @@ const Calendar2 = (props) => {
       title: "Presentasi Izzati",
     },
   ]);
+  
   return (
     <div>
       <Calendar
@@ -21,10 +23,23 @@ const Calendar2 = (props) => {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{
+          height: 550,
+          width: 1000,
+          fontFamily: 'Roboto Mono, monospace',
+          fontWeight: 'bold',
+          fontSize: "16px",
+          textAlign: "left",
+          padding: "5px"
+        }}
+        className="custom-calendar"
       />
     </div>
   );
 };
 
 export default Calendar2;
+
+
+
+
