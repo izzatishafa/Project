@@ -5,7 +5,7 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import TwinButton from "../Components/TwinButton"
 import AddBtn from "../Components/AddBtn"
 import profile from "../Assets/pict2.jpg"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 
@@ -24,18 +24,22 @@ function ManagementUser() {
     setCurrentPage(pageNumber);
   }
 
-  const users = [
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-    { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
-  ];
+
+  useEffect(() => {
+    const users = [
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+      { USER: 'Fatima Rusalka', CATEGORY: 'Magang PKL', ROLE: 'Back-End Developer' },
+    ];
+    setUser(users);
+  }, []);
 
   const totalPages = Math.ceil(user.length / showPerPage);
 
@@ -75,7 +79,7 @@ function ManagementUser() {
       <tbody>
 
       {currentPageUsers.map((user) => (
-        <tr key={users.id}>
+        <tr key={user.id}>
           <td className="flex items-center border p-5 text-center font-poppins text-light-gray text-sm">
             <img src={profile} alt="profile" className="rounded-full lg:w-9 lg:h-9 mr-5 ml-3 hidden lg:block" />
             {user.USER}

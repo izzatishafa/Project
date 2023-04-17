@@ -31,14 +31,6 @@ const PresensiSakit = () => {
                     </div>
                     <div className="flex flex-row items-center px-16 gap-5">
                         <UploadBtn />
-                        {/* <ReactDatePicker 
-                        placeholder={
-                            <span>
-                                Pilih Tanggal
-                                <span className="text-red-500">*</span>
-                            </span>
-                        } 
-                        /> */}
                         <ReactDatePicker placeholder="Pilih Tanggal" />
                         <p className='text-2xl'>-</p>
                         <ReactDatePicker placeholder="Sampai Tanggal" />

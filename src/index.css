@@ -10,6 +10,19 @@
       display: none;
     }
 }
+
+@media only screen and (max-width: 767px) {
+  .custom-calendar {
+    width: 450px;
+    font-size: 8px;
+  }
+}
+
 .custom-calendar .rbc-toolbar-label {
   font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.sidebar-closed {
+  margin: 100px;
 }

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGear, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useLocation } from "react-router-dom";
 import profile from '../Assets/pict2.jpg';
 
 const Header2 = () => {
@@ -10,10 +11,28 @@ const Header2 = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  const location = useLocation();
+
+  let headerText = "Hello, Maccaroni El Matadore";
+
+  if (location.pathname === "/attendance-list2") {
+    headerText = "Attendance List";
+  } else if (location.pathname === "/daily-report-admin") {
+    headerText = "Daily Report";
+  } else if (location.pathname === "/score-admin") {
+    headerText = "Score";
+  } else if (location.pathname === "/notifications-admin") {
+    headerText = "Notifications";
+  } else if (location.pathname === "/agenda2") {
+    headerText = "Agenda";
+  } else if (location.pathname === "/management-user") {
+    headerText = "Management User";
+  }
+
   return (
     <div className="w-full h-24 px-8 flex justify-between items-center">
       <div className="font-bold font-poppins text-dark-blue lg:text-3xl sm:text-lg">
-        Hello, Maccaroni El Matadore
+        {headerText}
       </div>
       <div className="flex flex-row">
         <div className="flex flex-col font-bold font-poppins text-right lg:text-base sm:text-xs lg:mt-0 sm:mt-[10px]"> 

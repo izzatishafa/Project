@@ -40,6 +40,8 @@ export default function LoginPage() {
     });
   };
 
+
+
   const handlePrev = () => {
     setCurrentSlide(currentSlide - 1);
   };

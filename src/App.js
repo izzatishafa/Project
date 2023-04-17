@@ -11,6 +11,7 @@ import { lazy } from 'react'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
 
+
 const authRoutes = [
   {
     title: "Login",
@@ -26,18 +27,22 @@ function App() {
   const BaseLayout = lazy(() => import('./Pages/BaseLayout'))
   
   useEffect(() => {
-    const checkLoginSession = async () => {
-      const session = await supabase.auth.getSession()
-      console.log(session.data)
-      return !!session.data.session
-    }
-    setLogin(checkLoginSession())
+    supabase.auth.getSession().then(({data : {
+      session
+    }}) => {
+      setLogin(session);
+    });
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setLogin(session)
+    })
   }, [])
+
+  console.log(login)
 
 
   return (
     <div className="App">
-      {/* <Switch>
+      <Switch>
       <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
             {authRoutes.map((route) => (
               <Route
@@ -82,15 +87,9 @@ function App() {
           }}/>
 
         ))}
-      </Switch> */}
-
-      <Baselayout>
-      <Agenda2 />
-      </Baselayout>
+      </Switch>
 
 
-
-        
     </div>
   );
 }

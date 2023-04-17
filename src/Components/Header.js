@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 import profile from "../Assets/pict2.jpg";
@@ -17,15 +18,31 @@ const Header = () => {
   // };
 
   const handleSignOut = async () => {
-    const { error } = await supabase.auth.signOut()
-    if (error) console.log('Error signing out:', error.message)
-    else console.log('Signed out successfully')
+    const { error } = await supabase.auth.signOut();
+    if (error) console.log("Error signing out:", error.message);
+    else console.log("Signed out successfully");
+  };
+
+  const location = useLocation();
+
+  let headerText = "Hello, Maccaroni El Matadore";
+
+  if (location.pathname === "/attendance-list") {
+    headerText = "Attendance List";
+  } else if (location.pathname === "/daily-report-magang") {
+    headerText = "Daily Report";
+  } else if (location.pathname === "/score") {
+    headerText = "Score";
+  } else if (location.pathname === "/notifications") {
+    headerText = "Notifications";
+  } else if (location.pathname === "/agenda") {
+    headerText = "Agenda";
   }
 
   return (
     <div className="w-full h-24 px-8 flex justify-between items-center">
       <div className="font-bold font-poppins text-dark-blue lg:text-3xl sm:text-lg">
-        Hello, Maccaroni El Matadore
+        {headerText}
       </div>
       <div className="flex flex-row">
         <div className="flex flex-col font-bold font-poppins text-right lg:text-base sm:text-xs lg:mt-0 sm:mt-[10px]">

@@ -25,12 +25,12 @@ const Calendar2 = (props) => {
         endAccessor="end"
         style={{
           height: 550,
-          width: 1000,
           fontFamily: 'Roboto Mono, monospace',
           fontWeight: 'bold',
-          fontSize: "16px",
+          fontSize: "15px",
           textAlign: "left",
-          padding: "5px"
+          paddingLeft: "30px",
+          paddingRight: "16px",
         }}
         className="custom-calendar"
       />
