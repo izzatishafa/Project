@@ -6,6 +6,9 @@ import UploadBtn from "../Components/UploadBtn"
 import ReactDatePicker from '../Components/DatePicker'
 
 const LaporanMagangBootcamp = () => {
+    const handleSubmit = () => {
+        
+    }
     return (
         <div className={`grid grid-cols-1 gap-4 ml-16 mr-10 mt-5 mb-40 pb-10 shadow-md rounded-md`}>
             <div className={`flex flex-col`}>
@@ -47,7 +50,7 @@ const LaporanMagangBootcamp = () => {
                 />
             </div>
             </div>
-            <SubmitBtn marginTop="5" />
+            <SubmitBtn onClick={()=>alert('hehe')} marginTop="5" />
         </div>
     )
 }

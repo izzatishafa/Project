@@ -122,7 +122,6 @@ const SideBar = ({ pathname }) => {
                 activeClassName="text-dark-blue"
                 isActive={(match, location) => location.pathname === "/"}
               >
-                {/* <FiHome size={23} color={location.pathname === '/' ? '#0A1D33' : 'gray'} className="text-dark-blue min-w-max"/> */}
                 <FiHome
                   size={23}
                   color={location.pathname === "/" ? "#0A1D33" : "gray"}

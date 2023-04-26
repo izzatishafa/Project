@@ -32,7 +32,7 @@ export default function DetailBtn({ onClick, data }) {
               <h1
                 className={`text-center text-xl text-dark-blue font-bold font-poppins pt-5 pb-2`}
               >
-                {data.TITLE}
+                {data.title}
               </h1>
               <button className="py-6 px-7 flex rounded" onClick={toggleModal}>
                 <CgCloseR />
@@ -41,33 +41,33 @@ export default function DetailBtn({ onClick, data }) {
             <h2
               className={`text-center text-md text-dark-blue font-bold font-poppins`}
             >
-              {data.PROJECT}
+              {data.project}
             </h2>
             <div className="flex flex-row gap-3 text-left pt-7 pb-1.5 pl-10">
               <p className="text-dark-blue font-thin font-poppins">
-                {moment(data.DATE).format("DD MMM YYYY")}
+                {moment(data.created_at).format("DD MMM YYYY")}
               </p>
               <p
                 className={
-                  (data.STATUS === "DONE"
+                  (data.status === "DONE"
                     ? "text-teal-800 bg-teal-200"
-                    : data.STATUS === "ON_PROGRESS"
+                    : data.status === "ON_PROGRESS"
                     ? "text-yellow-800 bg-yellow-200"
-                    : data.STATUS === "PENDING"
+                    : data.status === "PENDING"
                     ? "text-rose-800 bg-rose-200"
                     : "text-blue-800 bg-blue-200") +
                   " text-xs px-2 py-1 rounded-full font-bold font-poppins"
                 }
               >
-                {title(data.STATUS)}
+                {title(data.status)}
               </p>
             </div>
-            {data.POSITION === "PKL" && <p className="text-left text-dark-blue font-bold font-poppins pb-10 pl-10">
-              {data.DESC}
+            {data.position === "PKL" && <p className="text-left text-dark-blue font-bold font-poppins pb-10 pl-10">
+              {data.desc}
             </p> }
             
             <div className="flex flex-row items-center justify-center gap-4 pb-5">
-              {data.LAMPIRAN.map((item, i) => (
+              {JSON.parse(data.lampiran).map((item, i) => (
                 <img
                   src={item}
                   key={`img-${i}`}
@@ -76,8 +76,8 @@ export default function DetailBtn({ onClick, data }) {
               ))}
             </div>
             {
-              data.POSITION === "Bootcamp" && <p className="text-left text-dark-blue font-bold font-poppins pb-5 pl-10">
-              {data.KENDALA}
+              data.position === "Bootcamp" && <p className="text-left text-dark-blue font-bold font-poppins pb-5 pl-10">
+              {data.kendala}
             </p>
             }
             

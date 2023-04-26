@@ -9,7 +9,9 @@ function SearchBar() {
           placeholder="Search"
           className="bg-transparent text-md w-full py-1 px-2 appearance-none outline-none"
         />
-        <img src={search} alt="search-icon" className="ml-2 w-5" />
+        <button>
+          <img src={search} alt="search-icon" className="ml-2 w-5" />
+        </button>
       </div>
     </div>
   );

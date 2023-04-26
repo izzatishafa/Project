@@ -5,11 +5,13 @@ import DetailBtn from "../Components/DetailBtn";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
+import { supabase } from "../supabaseClient";
 
 const DailyReportAdmin = () => {
   const [showPerPage, setShowPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
-  const [agenda, setAgenda] = useState([])
+  const [agenda, setAgenda] = useState([]);
+  const [data, setData] = useState([]);
 
   function handleShowPerPageChange(event) {
     setShowPerPage(parseInt(event.target.value));
@@ -20,20 +22,26 @@ const DailyReportAdmin = () => {
     setCurrentPage(pageNumber);
   }
 
-  
-
-
-
-  const totalPages = Math.ceil(agenda.length / showPerPage);
+  const totalPages = Math.ceil(data.length / showPerPage);
 
   const startIndex = (currentPage - 1) * showPerPage;
   const endIndex = startIndex + showPerPage;
-  const currentPageUsers = agenda.slice(startIndex, endIndex);
-  useEffect(()=>{
-    axios.get("data/report.json").then((response)=>{
-      setAgenda(response.data.data)
-    })
-  },[])
+  const currentPageUsers = data.slice(startIndex, endIndex);
+  useEffect(() => {
+    axios.get("data/report.json").then((response) => {
+      setAgenda(response.data.data);
+    });
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    let { data, error } = await supabase
+      .from("student_assignment_report")
+      .select("*");
+
+    console.log(data);
+    setData(data)
+  };
 
   return (
     <div className="flex flex-col">
@@ -81,16 +89,16 @@ const DailyReportAdmin = () => {
             {currentPageUsers.map((item) => (
               <tr key={item.id}>
                 <td className="border p-5 text-center font-poppins text-light-gray text-sm">
-                  {moment(item.DATE,"YYYY-MM-DD").format("DD MMM YYYY")}
+                  {moment(item.created_at, "YYYY-MM-DD").format("DD MMM YYYY")}
                 </td>
                 <td className="border p-2 text-center font-poppins text-light-gray text-sm">
-                  {item.NAME}
+                  {item.name}
                 </td>
                 <td className="border p-2 text-center font-poppins text-light-gray text-sm">
-                  {item.ACTIVITY}
+                  {item.activity}
                 </td>
                 <td className="border">
-                  <DetailBtn data={item}/>
+                  <DetailBtn data={item} />
                 </td>
               </tr>
             ))}

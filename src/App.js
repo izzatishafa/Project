@@ -3,19 +3,27 @@ import Baselayout from './Pages/BaseLayout'
 import ManagementAgenda from './Pages/ManagementAgenda'
 import ManagementUser from './Pages/ManagementUser'
 import LoginPage from './Pages/LoginPage'
+import HomeAdmin from './Pages/HomeAdmin'
 import Preloader from './Components/Preloader'
-import Agenda2 from './Pages/Agenda2'
+import AgendaBaru from './Pages/AgendaBaru'
+import DailyReportAdmin from './Pages/DailyReportAdmin'
 import { Suspense } from 'react'
 import { router } from './routes'
 import { lazy } from 'react'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
+import DailyReportMagang from './Pages/DailyReportMagang'
+import DailyReportPkl from './Pages/DailyReportPkl'
+import LaporanMagangBootcamp from './Pages/LaporanMagangBootcamp'
+import LaporanMagangPkl from './Pages/LaporanMagangPkl'
+
+
 
 
 const authRoutes = [
   {
     title: "Login",
-    path: "/login",
+    path: "/auth/:page",
     component: lazy(() => import("./Pages/LoginPage")),
     exact: true,
   },
@@ -27,21 +35,27 @@ function App() {
   const BaseLayout = lazy(() => import('./Pages/BaseLayout'))
   
   useEffect(() => {
-    supabase.auth.getSession().then(({data : {
-      session
-    }}) => {
-      setLogin(session);
-    });
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setLogin(session)
+   
+    supabase.auth.onAuthStateChange(async(_event, session) => {
+      
+      console.log("authchange",session)
+      let { data, error } = await supabase
+      .from("user_data")
+      .select("first_login").eq('email',session.user.email);
+      setLogin({...session, ...data[0]})
+      console.log(data)
     })
   }, [])
 
-  console.log(login)
+  console.log(login) 
 
 
   return (
     <div className="App">
+      {/* <DailyReportAdmin />
+      <LaporanMagangBootcamp />
+      <LaporanMagangPkl /> */} 
+
       <Switch>
       <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
             {authRoutes.map((route) => (
@@ -50,7 +64,7 @@ function App() {
                 exact={route.exact}
                 path={route.path}
                 render={() => {
-                  if (login) {
+                  if (login?.access_token && !login?.first_login) {
                     return <Redirect to="/" />;
                   }
                   document.title = `Login | Kesatria Kode`;
@@ -69,7 +83,7 @@ function App() {
               return (
                 <Redirect
                   to={{
-                    pathname: "/login",
+                    pathname: "/auth/login",
                     state: { returnUrl: window.location.pathname },
                   }}
                 />
@@ -89,6 +103,8 @@ function App() {
         ))}
       </Switch>
 
+      
+      
 
     </div>
   );
