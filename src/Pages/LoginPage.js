@@ -7,7 +7,8 @@ import Swal from "sweetalert2";
 import { supabase } from "../supabaseClient";
 import { useState } from "react";
 import { Route, Switch, useRouteMatch, useHistory } from "react-router-dom";
-import { Form, Formik } from "formik";
+import { Form, Formik, Field } from "formik";
+import classNames from "classnames";
 
 export default function LoginPage() {
   let { path, url } = useRouteMatch();
@@ -18,22 +19,20 @@ export default function LoginPage() {
     email: "",
     password: "",
   });
-  async function signInWithEmail({email, password}) {
-    console.log(email, password)
+  async function signInWithEmail({ email, password }) {
+    console.log(email, password);
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
     return { data, error };
-  } 
+  }
 
   const [currentSlide, setCurrentSlide] = useState(1);
   const handleInput = (e) => {
     setUserCredential((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-  const handleNext = () => {
-    
-  };
+  const handleNext = () => {};
 
   const handlePrev = () => {
     setCurrentSlide(currentSlide - 1);
@@ -44,21 +43,22 @@ export default function LoginPage() {
     console.log(session.data);
   };
 
-
   const LoginForm = () => {
     const handleSubmit = async (values, { resetForm }) => {
       console.log(values);
-      signInWithEmail({email: values.email, password: values.password}).then(({ data, error }) => {
-        if (data.session != null) {
-          history.push("/auth/complete");
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: error.message,
-          });
+      signInWithEmail({ email: values.email, password: values.password }).then(
+        ({ data, error }) => {
+          if (data.session != null) {
+            history.push("/auth/complete");
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: error.message,
+            });
+          }
         }
-      });
+      );
     };
     return (
       <div className="w-full flex flex-[1] flex-col justify-center">
@@ -70,8 +70,9 @@ export default function LoginPage() {
             Silahkan login untuk melanjutkan aktivitas
           </h2>
           <Formik
-          initialValues={{email: '', password: ''}}
-          onSubmit={handleSubmit}>
+            initialValues={{ email: "", password: "" }}
+            onSubmit={handleSubmit}
+          >
             {({
               errors,
               touched,
@@ -123,6 +124,18 @@ export default function LoginPage() {
   };
 
   const CompleteProfileForm = () => {
+    const handleSubmit = async (values) => {
+      const { data } = await supabase.auth.getSession();
+      const { error } = await supabase.from("user_data").insert({
+        email: data.session.user.email,
+        first_login: false,
+        no_whatsapp: values.no_whatsapp,
+        asal_sekolah: values.asal_sekolah,
+      });
+      if (error === null) {
+        history.push("/auth/change-password");
+      }
+    };
     return (
       <div className="w-full h-screen flex flex-col justify-center">
         <div className="flex flex-col px-44 w-full">
@@ -134,47 +147,170 @@ export default function LoginPage() {
             Silahkan lengkapi identitas Anda
           </h2>
           <ProfilePicture />
-          <label className="text-dark-blue font-poppins font-thin text-sm pb-1">
-            No. Whatsapp
-          </label>
-          <input
-            type="text"
-            placeholder="Masukkan No. Whatsapp"
-            className="appearance-none leading-tight focus:outline-none bg-gray-100 font-poppins text-xs rounded-md p-2 mb-3 outline-none"
-          />
-          <label className="text-dark-blue font-poppins font-thin text-sm pb-1">
-            Asal Sekolah
-          </label>
-          <input
-            type="text"
-            placeholder="Masukkan asal sekolah"
-            className="bg-gray-100 font-poppins text-xs rounded-md p-2 mb-5 outline-none"
-          />
-        </div>
-        <div className="px-24">
-          <SubmitBtn onClick={handleNext} text="Submit" marginTop={8} />
-          <BackBtn onClick={handlePrev} />
+          <Formik
+            initialValues={{ no_whatsapp: "", asal_sekolah: "" }}
+            onSubmit={handleSubmit}
+          >
+            {({ errors, touched }) => (
+              <Form className="grid grid-cols-12">
+                <label
+                  htmlFor="no_whatsapp"
+                  className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
+                >
+                  No. Whatsapp
+                </label>
+                <Field
+                  type="text"
+                  name="no_whatsapp"
+                  placeholder="Masukkan No. Whatsapp"
+                  onKeyPress={(event) => {
+                    const regex = /^[0-9]*$/;
+                    if (!regex.test(event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
+                  className={classNames(
+                    `appearance-none leading-tight focus:outline-none bg-gray-100 font-poppins text-xs rounded-md p-2 mb-3 outline-none col-span-12`,
+                    {
+                      "border-red-500":
+                        errors.no_whatsapp && touched.no_whatsapp,
+                    }
+                  )}
+                />
+
+                <label
+                  htmlFor="asal_sekolah"
+                  className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
+                >
+                  Asal Sekolah
+                </label>
+                <Field
+                  type="text"
+                  name="asal_sekolah"
+                  placeholder="Masukkan asal sekolah"
+                  className={classNames(
+                    `bg-gray-100 font-poppins text-xs rounded-md p-2 mb-5 outline-none col-span-12`,
+                    {
+                      "border-red-500":
+                        errors.no_whatsapp && touched.no_whatsapp,
+                    }
+                  )}
+                />
+
+                <button
+                  type="submit"
+                  className="col-span-12 bg-light-blue hover:bg-hv-light-blue p-1.5 text-md text-white font-poppins bold rounded-md my-5 mb-3"
+                >
+                  Submit
+                </button>
+                <BackBtn className="col-span-12" onClick={handlePrev} />
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     );
   };
 
   const ChangePasswordForm = () => {
+    const handleSubmit = async (values) => {
+      console.log(values)
+      const { user, error } = await supabase.auth.updateUser({
+        password: values.new_password,
+      });
+      console.log(user)
+      console.log(error)
+      console.log(JSON.stringify(error))
+      if (error===null) {
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Password has been changed!",
+        }).then(()=>{
+          history.push("/dashboard")
+        })
+      }
+      if (error?.status===422) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message,
+        });
+      }
+    };
     return (
       <div className="w-full h-screen flex flex-col justify-center">
         <div className="flex flex-col py-3 px-44 w-full">
-          <label className="text-dark-blue font-poppins font-thin text-sm pb-2">
+          <Formik
+            initialValues={{ new_password: "", confirm_new_password: "" }}
+            onSubmit={handleSubmit}
+          >
+            {({
+              errors,
+              touched,
+              handleBlur,
+              values,
+              handleChange,
+              setFieldValue,
+            }) => (
+              <Form className="grid grid-cols-12">
+                <label
+                  htmlFor="password_baru"
+                  className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
+                >
+                  Password Baru
+                </label>
+                <PasswordInput
+                  wrapperClassName="col-span-12"
+                  placeholder="Masukkan password"
+                  name="new_password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.new_password}
+                />
+
+                <label
+                  htmlFor="konfirmasi_password_baru"
+                  className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
+                >
+                  Konfirmasi Password Baru
+                </label>
+                <PasswordInput
+                  wrapperClassName="col-span-12"
+                  placeholder="Masukkan password"
+                  name="confirm_new_password"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.confirm_new_password}
+                />
+                <button
+                  type="submit"
+                  className="col-span-12 bg-light-blue hover:bg-hv-light-blue p-1.5 text-md text-white font-poppins bold rounded-md my-5 mb-3"
+                >
+                  Confirm
+                </button>
+                <BackBtn className="col-span-12" onClick={handlePrev} />
+              </Form>
+            )}
+          </Formik>
+
+          {/* <label className="text-dark-blue font-poppins font-thin text-sm pb-2">
             Password Baru
           </label>
           <PasswordInput placeholder="Masukkan Password Baru" />
-          <label className="text-dark-blue font-poppins font-thin text-sm py-2">
+          <label className="text-dark-blue font-poppins font-thin text-sm py-2 pt-5">
             Konfirmasi password Baru
           </label>
           <PasswordInput placeholder="Konfirmasi password baru" />
         </div>
-        <div className="pt-5 px-24">
-          <SubmitBtn onClick={handleNext} text="confirm" />
-          <BackBtn onClick={handlePrev} />
+       
+          <button
+            type="submit"
+            className="col-span-12 bg-light-blue hover:bg-hv-light-blue p-1.5 text-md text-white font-poppins bold rounded-md my-5 mb-3"
+          >
+            Confirm
+          </button>
+          <BackBtn onClick={handlePrev} /> */}
         </div>
       </div>
     );

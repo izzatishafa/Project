@@ -48,5 +48,10 @@ export const router = [
         component: lazy(() => import("./Pages/Score")),
         exact: true
     },
-
+    {
+        title: "Laporan Magang Bootcamp",
+        path: "/laporan-magang-bootcamp",
+        component: lazy(() => import("./Pages/LaporanMagangBootcamp")),
+        exact: true
+    },
 ]
