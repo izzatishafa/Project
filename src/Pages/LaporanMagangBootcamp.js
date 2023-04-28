@@ -4,16 +4,21 @@ import SelectStatus from "../Components/SelectStatus"
 import SubmitBtn from "../Components/SubmitBtn"
 import UploadBtn from "../Components/UploadBtn"
 import ReactDatePicker from '../Components/DatePicker'
+import { useHistory } from "react-router-dom";
 
 const LaporanMagangBootcamp = () => {
+    const history = useHistory();
     const handleSubmit = () => {
         
+    }
+    const handleGoBack = () => {
+        history.push("/daily-report-magang");
     }
     return (
         <div className={`grid grid-cols-1 gap-4 ml-16 mr-10 mt-5 mb-40 pb-10 shadow-md rounded-md`}>
             <div className={`flex flex-col`}>
             <div className="flex flex-row items-center px-14 pt-5 pb-1 gap-2">
-                    <FontAwesomeIcon icon={faChevronLeft} />
+                    <FontAwesomeIcon icon={faChevronLeft} onClick={handleGoBack} className="hover:cursor-pointer"/>
                     <p className={`text-left text-lg text-dark-blue font-bold font-poppins`}>Bilik Pengisian Laporan</p>
                 </div>
                 <p className={`font-poppins text-dark-blue text-sm font-thin px-14`}>Magang Bootcamp</p>
@@ -50,7 +55,7 @@ const LaporanMagangBootcamp = () => {
                 />
             </div>
             </div>
-            <SubmitBtn onClick={()=>alert('hehe')} marginTop="5" />
+            <SubmitBtn marginTop="5" />
         </div>
     )
 }

@@ -12,7 +12,7 @@ import LaporanMagangBootcamp from './LaporanMagangBootcamp';
 const DailyReportMagang = () => {
   const history = useHistory();
   const handleAdd = () => {
-    history.push("/laporan-magang-bootcamp");
+    history.push("/daily-report-magang/laporan-magang-bootcamp");
   };
   return (
       <div className="w-full flex flex-col">

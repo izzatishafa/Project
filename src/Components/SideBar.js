@@ -72,7 +72,7 @@ const SideBar = ({ pathname }) => {
   useEffect(() => {
     isTab && setIsOpen(false);
   }, [pathname]);
-
+  const parentPath = "/"+ location.pathname.split("/")[1]
   return (
     <div>
       <div
@@ -84,12 +84,10 @@ const SideBar = ({ pathname }) => {
         variants={Sidebar_animation}
         initial={{ x: isTab ? -250 : 0 }}
         animate={isOpen ? "open" : "closed"}
-        // className="bg-white text-gray z-[999] w-[14rem] max-w-
-        // [14rem] overflow-hidden md:relative fixed"
         className={`bg-white text-gray z-[999] w-[14rem] max-w-
         [14rem] overflow-hidden md:relative fixed ${
-        isTab && !isOpen ? "sidebar-closed" : ""
-    }`}
+          isTab && !isOpen ? "sidebar-closed" : ""
+        }`}
       >
         {/* Logo */}
         <div className="flex items-center gap-1 py-4 pl-3 bg-dark-blue rounded-br-lg">
@@ -117,20 +115,20 @@ const SideBar = ({ pathname }) => {
             <li className="">
               <NavLink
                 exact
-                to="/"
+                to="/dashboard"
                 className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300"
                 activeClassName="text-dark-blue"
-                isActive={(match, location) => location.pathname === "/"}
+                isActive={(match, location) => parentPath ===  "/dashboard"}
               >
                 <FiHome
                   size={23}
-                  color={location.pathname === "/" ? "#0A1D33" : "gray"}
+                  color={parentPath ===  "/dashboard" ? "#0A1D33" : "gray"}
                   className="text-dark-blue min-w-max"
                   title="Home"
                 />
                 <p
                   className={`font-poppins text-[16px] font-bold ${
-                    location.pathname === "/"
+                    parentPath ===  "/dashboard"
                       ? "text-dark-blue"
                       : "text-light-gray"
                   }`}
@@ -146,13 +144,13 @@ const SideBar = ({ pathname }) => {
                 className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300"
                 activeClassName="text-dark-blue"
                 isActive={(match, location) =>
-                  location.pathname === "/attendance-list"
+                  parentPath ===  "/attendance-list"
                 }
               >
                 <BsCheck2Circle
                   size={25}
                   color={
-                    location.pathname === "/attendance-list"
+                    parentPath ===  "/attendance-list"
                       ? "#0A1D33"
                       : "gray"
                   }
@@ -161,7 +159,7 @@ const SideBar = ({ pathname }) => {
                 />
                 <p
                   className={`font-poppins text-[16px] font-bold ${
-                    location.pathname === "/attendance-list"
+                    parentPath ===  "/attendance-list"
                       ? "text-dark-blue"
                       : "text-light-gray"
                   }`}
@@ -177,13 +175,13 @@ const SideBar = ({ pathname }) => {
                 className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300"
                 activeClassName="text-dark-blue"
                 isActive={(match, location) =>
-                  location.pathname === "/daily-report-magang"
+                  parentPath ===  "/daily-report-magang"
                 }
               >
                 <FiEdit
                   size={23}
                   color={
-                    location.pathname === "/daily-report-magang"
+                    parentPath ===  "/daily-report-magang"
                       ? "#0A1D33"
                       : "gray"
                   }
@@ -192,7 +190,7 @@ const SideBar = ({ pathname }) => {
                 />
                 <p
                   className={`font-poppins text-[16px] font-bold ${
-                    location.pathname === "/daily-report-magang"
+                    parentPath ===  "/daily-report-magang"
                       ? "text-dark-blue"
                       : "text-light-gray"
                   }`}
@@ -207,17 +205,17 @@ const SideBar = ({ pathname }) => {
                 to="/score"
                 className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300"
                 activeClassName="text-dark-blue"
-                isActive={(match, location) => location.pathname === "/score"}
+                isActive={(match, location) => parentPath ===  "/score"}
               >
                 <FiShoppingBag
                   size={23}
-                  color={location.pathname === "/score" ? "#0A1D33" : "gray"}
+                  color={parentPath ===  "/score" ? "#0A1D33" : "gray"}
                   className="text-dark-blue min-w-max"
                   title="Score"
                 />
                 <p
                   className={`font-poppins text-[16px] font-bold ${
-                    location.pathname === "/score"
+                    parentPath ===  "/score"
                       ? "text-dark-blue"
                       : "text-light-gray"
                   }`}
@@ -233,20 +231,20 @@ const SideBar = ({ pathname }) => {
                 className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300"
                 activeClassName="text-dark-blue"
                 isActive={(match, location) =>
-                  location.pathname === "/notifications"
+                  parentPath ===  "/notifications"
                 }
               >
                 <FiBell
                   size={23}
                   color={
-                    location.pathname === "/notifications" ? "#0A1D33" : "gray"
+                    parentPath ===  "/notifications" ? "#0A1D33" : "gray"
                   }
                   className="text-dark-blue min-w-max"
                   title="Notifications"
                 />
                 <p
                   className={`font-poppins text-[16px] font-bold ${
-                    location.pathname === "/notifications"
+                    parentPath ===  "/notifications"
                       ? "text-dark-blue"
                       : "text-light-gray"
                   }`}
@@ -261,17 +259,17 @@ const SideBar = ({ pathname }) => {
                 to="/agenda"
                 className="py-4 px-3 flex flex-row gap-6 md:cursor-pointer cursor-default duration-300"
                 activeClassName="text-dark-blue"
-                isActive={(match, location) => location.pathname === "/agenda"}
+                isActive={(match, location) => parentPath ===  "/agenda"}
               >
                 <FiCalendar
                   size={23}
-                  color={location.pathname === "/agenda" ? "#0A1D33" : "gray"}
+                  color={parentPath ===  "/agenda" ? "#0A1D33" : "gray"}
                   className="text-dark-blue min-w-max"
                   title="Agenda"
                 />
                 <p
                   className={`font-poppins text-[16px] font-bold ${
-                    location.pathname === "/agenda"
+                    parentPath ===  "/agenda"
                       ? "text-dark-blue"
                       : "text-light-gray"
                   }`}
@@ -335,29 +333,29 @@ export default SideBar;
 //                 </div>
 //             </div>
 //             <div className="bg-white p-6">
-// <NavLink exact to="/" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/'}>
-//     <FiHome size={24} color={location.pathname === '/' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
-//     <p className={`font-poppins font-bold ${location.pathname === '/' ? 'text-dark-blue' : 'text-light-gray'}`}>Home</p>
+// <NavLink exact to="/" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => parentPath ===  '/'}>
+//     <FiHome size={24} color={parentPath ===  '/' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
+//     <p className={`font-poppins font-bold ${parentPath ===  '/' ? 'text-dark-blue' : 'text-light-gray'}`}>Home</p>
 // </NavLink>
-//                 <NavLink to="/attendance-list" className="py-5 px-2.5 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/attendance-list'}>
-//                     <BsCheck2Circle size={25} color={location.pathname === '/attendance-list' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
-//                     <p className={`font-poppins font-bold ${location.pathname === '/attendance-list' ? 'text-dark-blue' : 'text-light-gray'}`}>Attendance List</p>
+//                 <NavLink to="/attendance-list" className="py-5 px-2.5 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => parentPath ===  '/attendance-list'}>
+//                     <BsCheck2Circle size={25} color={parentPath ===  '/attendance-list' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
+//                     <p className={`font-poppins font-bold ${parentPath ===  '/attendance-list' ? 'text-dark-blue' : 'text-light-gray'}`}>Attendance List</p>
 //                 </NavLink>
-//                 <NavLink to="/daily-report-magang" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/daily-report-magang'}>
-//                     <FiEdit size={23} color={location.pathname === '/daily-report-magang' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
-//                     <p className={`font-poppins font-bold ${location.pathname === '/daily-report-magang' ? 'text-dark-blue' : 'text-light-gray'}`}>Daily Report</p>
+//                 <NavLink to="/daily-report-magang" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => parentPath ===  '/daily-report-magang'}>
+//                     <FiEdit size={23} color={parentPath ===  '/daily-report-magang' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
+//                     <p className={`font-poppins font-bold ${parentPath ===  '/daily-report-magang' ? 'text-dark-blue' : 'text-light-gray'}`}>Daily Report</p>
 //                 </NavLink>
-//                 <NavLink to="/score" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/score'}>
-//                     <FiShoppingBag size={23} color={location.pathname === '/score' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
-//                     <p className={`font-poppins font-bold ${location.pathname === '/score' ? 'text-dark-blue' : 'text-light-gray'}`}>Score</p>
+//                 <NavLink to="/score" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => parentPath ===  '/score'}>
+//                     <FiShoppingBag size={23} color={parentPath ===  '/score' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
+//                     <p className={`font-poppins font-bold ${parentPath ===  '/score' ? 'text-dark-blue' : 'text-light-gray'}`}>Score</p>
 //                 </NavLink>
-//                 <NavLink to="/notifications" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/notifications'}>
-//                     <FiBell size={23} color={location.pathname === '/notifications' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
-//                     <p className={`font-poppins font-bold ${location.pathname === '/notifications' ? 'text-dark-blue' : 'text-light-gray'}`}>Notifications</p>
+//                 <NavLink to="/notifications" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => parentPath ===  '/notifications'}>
+//                     <FiBell size={23} color={parentPath ===  '/notifications' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
+//                     <p className={`font-poppins font-bold ${parentPath ===  '/notifications' ? 'text-dark-blue' : 'text-light-gray'}`}>Notifications</p>
 //                 </NavLink>
-//                 <NavLink to="/agenda" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => location.pathname === '/agenda'}>
-//                     <FiCalendar size={23} color={location.pathname === '/agenda' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
-//                     <p className={`font-poppins font-bold ${location.pathname === '/agenda' ? 'text-dark-blue' : 'text-light-gray'}`}>Agenda</p>
+//                 <NavLink to="/agenda" className="py-5 px-3 flex flex-row gap-6" activeClassName="text-dark-blue" isActive={(match, location) => parentPath ===  '/agenda'}>
+//                     <FiCalendar size={23} color={parentPath ===  '/agenda' ? '#0A1D33' : 'gray'} className="text-dark-blue"/>
+//                     <p className={`font-poppins font-bold ${parentPath ===  '/agenda' ? 'text-dark-blue' : 'text-light-gray'}`}>Agenda</p>
 //                 </NavLink>
 // <Pict />
 //              </div>

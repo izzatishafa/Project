@@ -12,16 +12,13 @@ const Header = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  // const handleLogOut = async () => {
-  //   const { error } = await supabase.auth.signOut();
-  //   console.log('success');
-  // };
-
-  const handleSignOut = async () => {
+  const handleLogOut = async () => {
+    console.log("clicked")
     const { error } = await supabase.auth.signOut();
     if (error) console.log("Error signing out:", error.message);
     else console.log("Signed out successfully");
   };
+
 
   const location = useLocation();
 
@@ -68,14 +65,13 @@ const Header = () => {
                   Settings
                 </button>
               </div>
-              <div className="py-2 px-4 hover:bg-dark-blue hover:text-white hover:rounded-md">
-                <button
-                  onClick={handleSignOut}
+              <div onClick={handleLogOut} className="py-2 px-4 hover:bg-dark-blue hover:text-white hover:rounded-md">
+                <span
                   className="flex flex-row font-bold text-sm"
                 >
                   <FontAwesomeIcon icon={faRightFromBracket} className="mr-2" />
                   Log out
-                </button>
+                </span>
               </div>
             </div>
           )}

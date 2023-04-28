@@ -5,7 +5,7 @@ export default function BackBtn({ onClick, ...props }) {
     <button
       onClick={onClick}
       className={classNames(`text-red border border-red font-poppins bg-white w-full 
-            rounded-md mb-3 p-2 hover:bg-red hover:text-white`, props.className)}
+            rounded-md mb-3 p-1 hover:bg-red hover:text-white`, props.className)}
     >
       Back
     </button>

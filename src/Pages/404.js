@@ -12,16 +12,11 @@ const Page404 = () => {
     history.replace("/");
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <h1>Sorry, the page you visited does not exist.</h1>
-      <button onClick={handleGoBack}>Back To Landing</button>
+    <div className="text-dark-blue font-poppins">
+      <h1 className="p-3">Sorry, the page you visited does not exist.</h1>
+      <div className="flex items-center justify-center mt-72">
+      <button onClick={handleGoBack} className=" w-[200px] py-1 rounded-md shadow-md hover:bg-gray-100">Back To Landing</button>
+      </div>
     </div>
   );
 };

@@ -3,9 +3,19 @@ import DoughnutChart from '../Components/AttendanceChart'
 import PresentBtn from '../Components/PresentBtn'
 import Sakit from '../Components/SakitBtn'
 import Izin from '../Components/IzinBtn'
+import { useHistory } from "react-router-dom";
  
 
 const AttendanceList = () => {
+    const history = useHistory();
+    const handleGoToSickForm = () => {
+        history.push("/attendance-list/presensi-sakit");
+    }
+    const handleGoToAbsentForm = () => {
+        history.push("/attendance-list/presensi-izin");
+    }
+    
+
     return (
         <div className="w-full">
             <div className={`grid grid-cols-1 gap-4 ml-20 mr-10 my-10 pb-10 shadow-md rounded-md`}>
@@ -24,8 +34,8 @@ const AttendanceList = () => {
                             <PresentBtn />
                             <p className={`text-red text-sm font-poppins`}>Keterangan tidak masuk</p>
                             <div className="flex flex-row gap-3 items-center justify-center my-2">
-                            <Sakit />
-                            <Izin />                        
+                            <Sakit onClick={handleGoToSickForm} />
+                            <Izin onClick={handleGoToAbsentForm} />                        
                             </div>
                         </div>
                     </div>

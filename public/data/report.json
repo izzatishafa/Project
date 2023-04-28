@@ -79,8 +79,8 @@
       "PROJECT": "PB Taxand",
       "STATUS": "ON_PROGRESS",
       "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
-      "DESC": "-",
-      "KENDALA": "Mengoreksi Soal",
+      "DESC": "Mengoreksi Soal",
+      "KENDALA": "",
       "POSITION": "PKL"
     },
     {
@@ -91,8 +91,8 @@
       "PROJECT": "PB Taxand",
       "STATUS": "ON_PROGRESS",
       "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
-      "DESC": "-",
-      "KENDALA": "Mengoreksi Soal",
+      "DESC": "Mengoreksi Soal",
+      "KENDALA": "",
       "POSITION": "PKL"
     },
     {
@@ -103,8 +103,8 @@
       "PROJECT": "PB Taxand",
       "STATUS": "ON_PROGRESS",
       "LAMPIRAN": ["assets/images/pkl.png", "assets/images/pkl.png"],
-      "DESC": "-",
-      "KENDALA": "Mengoreksi Soal",
+      "DESC": "Mengoreksi Soal",
+      "KENDALA": "",
       "POSITION": "PKL"
     },
     {
@@ -116,7 +116,7 @@
       "STATUS": "ON_PROGRESS",
       "LAMPIRAN": ["assets/images/bootcamp.png", "assets/images/bootcamp.png"],
       "DESC": "",
-      "KENDALA": "Mikho Beli Makan",
+      "KENDALA": "Mikko Beli Makan",
       "POSITION": "Bootcamp"
     }
 
