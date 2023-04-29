@@ -8,7 +8,7 @@ import DenyBtn from "./DenyBtn";
 import moment from "moment";
 import {title} from "case";
 
-Modal.setAppElement("#root");
+Modal.setAppElement("#root"); // untuk mengatur elemen HTML tempat di mana modal akan dirender
 
 export default function DetailBtn({ onClick, data }) {
   const [isOpen, setIsOpen] = useState(false);

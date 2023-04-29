@@ -1,4 +1,3 @@
-import { Switch, Route, Router} from 'react-router-dom'
 import SearchBar from "../Components/SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";

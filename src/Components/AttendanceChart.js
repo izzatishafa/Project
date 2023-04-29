@@ -3,65 +3,7 @@ import Chart from 'react-apexcharts'
 
 
 const DoughnutChart = () => {
-  // const chartOptions = {
-  //   chart: {
-  //     toolbar: {
-  //       show: false,
-  //     },
-  //   },
-  //   colors: ['#30C04F', '#C72929'],
-  //   // dataLabels: {
-  //   //   enabled: false,
-  //   // },
-  //   dataLabels: {
-  //     enabled: false,
-  //     style: {
-  //       stroke: 'none',
-  //     },
-  //   },
-  //   labels: ['Masuk', 'Tidak Masuk'],
-  //   legend: {
-  //     position: 'top',
-  //     style: {
-  //       stroke: "#FFF",
-  //       rounded: 'none',
-  //     },
-  //   },
-  //   plotOptions: {
-  //     pie: {
-  //       donut: {
-  //         size: '65%',
-  //         labels: {
-  //           show: true,
-  //           total: {
-  //             show: true,
-  //             showAlways: true,
-  //             label: 'Masuk',
-  //             formatter: (w) => {
-  //               const total = w.globals.seriesTotals.reduce(
-  //                 (acc, val) => acc + val,
-  //                 0
-  //               );
-  //               const percentage = parseInt(
-  //                 (w.globals.series[0] / total) * 100
-  //               );
-  //               return `${percentage}%`;
-  //             },
-  //             fontSize: '20px',
-  //             fontFamily: 'Helvetica, Arial, sans-serif',
-  //             fontWeight: 600,
-  //             color: '#30C04F',
-  //           },
-  //           style: {
-  //             stroke: 'none',
-  //           },
-  //         },
-  //         style: {
-  //           stroke: 'none',
-  //         },
-  //       },
-  //     },
-  //   },
+
   const chartOptions = {
     chart: {
       toolbar: {

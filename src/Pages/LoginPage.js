@@ -1,7 +1,6 @@
 import logo from "../Assets/logo-login.png";
 import PasswordInput from "../Components/PasswordInput";
 import ProfilePicture from "../Components/ProfilePict";
-import SubmitBtn from "../Components/SubmitBtn";
 import BackBtn from "../Components/BackBtn";
 import Swal from "sweetalert2";
 import { supabase } from "../supabaseClient";
@@ -212,92 +211,6 @@ export default function LoginPage() {
     );
   };
 
-  // const ChangePasswordForm = () => {
-  //   const handleSubmit = async (values) => {
-  //     console.log(values)
-  //     const { user, error } = await supabase.auth.updateUser({
-  //       password: values.new_password,
-  //     });
-  //     console.log(user)
-  //     console.log(error)
-  //     console.log(JSON.stringify(error))
-  //     if (error===null) {
-  //       Swal.fire({
-  //         icon: "success",
-  //         title: "Success",
-  //         text: "Password has been changed!",
-  //       }).then(()=>{
-  //         history.push("/dashboard")
-  //       })
-  //     }
-  //     if (error?.status===422) {
-  //       Swal.fire({
-  //         icon: "error",
-  //         title: "Oops...",
-  //         text: error.message,
-  //       });
-  //     }
-  //   };
-  //   return (
-  //     <div className="w-full h-screen flex flex-col justify-center">
-  //       <div className="flex flex-col py-3 px-44 w-full">
-  //         <Formik
-  //           initialValues={{ new_password: "", confirm_new_password: "" }}
-  //           onSubmit={handleSubmit}
-  //         >
-  //           {({
-  //             errors,
-  //             touched,
-  //             handleBlur,
-  //             values,
-  //             handleChange,
-  //             setFieldValue,
-  //           }) => (
-  //             <Form className="grid grid-cols-12">
-  //               <label
-  //                 htmlFor="password_baru"
-  //                 className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
-  //               >
-  //                 Password Baru
-  //               </label>
-  //               <PasswordInput
-  //                 wrapperClassName="col-span-12"
-  //                 placeholder="Masukkan password"
-  //                 name="new_password"
-  //                 onChange={handleChange}
-  //                 onBlur={handleBlur}
-  //                 value={values.new_password}
-  //               />
-
-  //               <label
-  //                 htmlFor="konfirmasi_password_baru"
-  //                 className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
-  //               >
-  //                 Konfirmasi Password Baru
-  //               </label>
-  //               <PasswordInput
-  //                 wrapperClassName="col-span-12"
-  //                 placeholder="Masukkan password"
-  //                 name="confirm_new_password"
-  //                 onChange={handleChange}
-  //                 onBlur={handleBlur}
-  //                 value={values.confirm_new_password}
-  //               />
-  //               <button
-  //                 type="submit"
-  //                 className="col-span-12 bg-light-blue hover:bg-hv-light-blue p-1.5 text-md text-white font-poppins bold rounded-md my-5 mb-3"
-  //               >
-  //                 Confirm
-  //               </button>
-  //               <BackBtn className="col-span-12" onClick={handlePrev} />
-  //             </Form>
-  //           )}
-  //         </Formik>
-
-  //       </div>
-  //     </div>
-  //   );
-  // };
 
   const ChangePasswordForm = () => {
     const handleSubmit = async (values) => {

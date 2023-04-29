@@ -19,7 +19,7 @@ const SideBar = ({ pathname }) => {
   const location = useLocation();
 
   console.log(isTab, "isTab");
-
+  
   // Sidebar Open State
   const [isOpen, setIsOpen] = useState(isTab ? false : true);
 
@@ -79,7 +79,7 @@ const SideBar = ({ pathname }) => {
         onClick={() => setIsOpen(false)}
         className={`md:hidden fixed inset-0 max-h-screen z-[998] bg-black/50
             ${isOpen ? "block" : "hidden"}`}
-      ></div>
+      ></div> 
       <motion.div
         variants={Sidebar_animation}
         initial={{ x: isTab ? -250 : 0 }}
