@@ -124,6 +124,12 @@ export default function LoginPage() {
 
   const CompleteProfileForm = () => {
     const handleSubmit = async (values) => {
+      console.log({
+        email: data.session.user.email,
+        first_login: false,
+        no_whatsapp: values.no_whatsapp,
+        asal_sekolah: values.asal_sekolah,
+      })
       const { data } = await supabase.auth.getSession();
       const { error } = await supabase.from("user_data").insert({
         email: data.session.user.email,

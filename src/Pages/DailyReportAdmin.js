@@ -28,9 +28,6 @@ const DailyReportAdmin = () => {
   const endIndex = startIndex + showPerPage;
   const currentPageUsers = data.slice(startIndex, endIndex);
   useEffect(() => {
-    axios.get("data/report.json").then((response) => {
-      setAgenda(response.data.data);
-    });
     fetchData();
   }, []);
 

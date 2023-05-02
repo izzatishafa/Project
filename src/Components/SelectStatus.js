@@ -1,4 +1,5 @@
 import Select from 'react-select';
+import classNames from 'classnames';
 
 
 const options = [
@@ -9,15 +10,16 @@ const options = [
     { value: 'DONE', label: 'Done'},
   ];
 
-const SelectStatus = () => {
+const SelectStatus = (props) => {
     return (
-        <div className="">
         <Select
+            onChange={props.onChange}
+            value={props.value}
+            name={props.name}
             options={options}
             placeholder="Pilih Status"
-            className={`border-thin rounded-lg placeholder-light-gray font-poppins outline-none my-2`}
+            className={classNames(`border-thin rounded-lg placeholder-light-gray font-poppins outline-none my-2`, props.className)}
         />
-        </div>
     )
 }
 
