@@ -40,7 +40,7 @@ const PresensiSakit = () => {
                         <p className='text-2xl'>-</p>
                         <ReactDatePicker placeholder="Sampai Tanggal" />
                         </div>
-                        <SubmitBtn marginTop="5" />
+                        <submitBtn marginTop="5" />
                 </div>
         </div>
     )

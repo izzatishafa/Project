@@ -1,11 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import SelectStatus from "../Components/SelectStatus";
-import SubmitBtn from "../Components/SubmitBtn";
 import UploadBtn from "../Components/UploadBtn";
-import ReactDatePicker from "../Components/DatePicker";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import { useState } from "react";
 import { Form, Formik } from "formik";
 import { supabase } from "../supabaseClient";
@@ -13,9 +10,7 @@ import { supabase } from "../supabaseClient";
 const LaporanMagangBootcamp = () => {
   const history = useHistory();
   const handleSubmit = async (values) => {
-    console.log(values);
     const { data } = await supabase.auth.getSession();
-    console.log(data);
     const { error } = await supabase.from("student_assignment_report").insert({
       title: values.task,
       status: values.status.value,
@@ -74,67 +69,69 @@ const LaporanMagangBootcamp = () => {
           }) => (
             <Form>
               <div className="flex flex-row">
-              <div className="flex flex-col w-full">
-                <label className={`font-poppins text-black`}>
-                  Task <span className="text-red">*</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="contoh kegiatan"
-                  name="task"
-                  onChange={handleChange}
-                  value={values.task}
-                  className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`}
-                />
-                <label className={`font-poppins text-black pt-3`}>
-                  Status <span className="text-red">*</span>
-                </label>
-                <SelectStatus
-                  name="status"
-                  onChange={(data) => setFieldValue("status", data)}
-                  value={values.status}
-                />
-                <div className="flex flex-row gap-4 mt-3">
-                  <UploadBtn />
-                </div>
-                <div className="w-full mt-8">
+                <div className="flex flex-col w-full">
                   <label className={`font-poppins text-black`}>
-                    Keterangan (Opsional){" "}
-                  </label>
-                  <textarea
-                    className={`w-full font-poppins px-3 py-2 text-sm text-black border rounded-md outline-none mt-2`}
-                    placeholder="contoh keterangan"
-                    name="keterangan"
-                    onChange={handleChange}
-                    value={values.keterangan}
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col pl-28 w-full">
-                <div>
-                  <label className={`font-poppins text-black lg:pt-0 sm:pt-4`}>
-                    Nama Project <span className="text-red">*</span>
+                    Task <span className="text-red">*</span>
                   </label>
                   <input
                     type="text"
-                    placeholder="contoh nama project"
-                    name="nama_project"
+                    placeholder="contoh kegiatan"
+                    name="task"
                     onChange={handleChange}
-                    value={values.nama_project}
-                    className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none `}
+                    value={values.task}
+                    className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`}
+                  />
+                  <label className={`font-poppins text-black pt-3`}>
+                    Status <span className="text-red">*</span>
+                  </label>
+                  <SelectStatus
+                    name="status"
+                    onChange={(data) => setFieldValue("status", data)}
+                    value={values.status}
+                  />
+                  <div className="flex flex-row gap-4 mt-3">
+                    <UploadBtn />
+                  </div>
+                  <div className="w-full mt-8">
+                    <label className={`font-poppins text-black`}>
+                      Keterangan (Opsional){" "}
+                    </label>
+                    <textarea
+                      className={`w-full font-poppins px-3 py-2 text-sm text-black border rounded-md outline-none mt-2`}
+                      placeholder="contoh keterangan"
+                      name="keterangan"
+                      onChange={handleChange}
+                      value={values.keterangan}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col pl-28 w-full">
+                  <div>
+                    <label
+                      className={`font-poppins text-black lg:pt-0 sm:pt-4`}
+                    >
+                      Nama Project <span className="text-red">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="contoh nama project"
+                      name="nama_project"
+                      onChange={handleChange}
+                      value={values.nama_project}
+                      className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none `}
+                    />
+                  </div>
+                  <label className={`font-poppins text-black pt-5`}>
+                    Kendala <span className="text-red">*</span>
+                  </label>
+                  <textarea
+                    className={`w-full font-poppins px-3 py-2 text-black border rounded-md outline-none my-2 text-sm`}
+                    placeholder="contoh uraian kendala"
+                    name="kendala"
+                    onChange={handleChange}
+                    value={values.kendala}
                   />
                 </div>
-                <label className={`font-poppins text-black pt-5`}>
-                  Kendala <span className="text-red">*</span>
-                </label>
-                <textarea
-                  className={`w-full font-poppins px-3 py-2 text-black border rounded-md outline-none my-2 text-sm`}
-                  placeholder="contoh uraian kendala"
-                  name="kendala"
-                  onChange={handleChange}
-                  value={values.kendala}
-                />
-              </div>
               </div>
               <button
                 type="submit"

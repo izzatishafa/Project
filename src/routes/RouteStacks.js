@@ -1,7 +1,8 @@
-import React, { useEffect, useState, lazy } from "react";
+import React, { useEffect, useState, lazy, useRef } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import { supabase } from "../supabaseClient";
+import Preloader from "../Components/Preloader";
 
 
 
@@ -10,21 +11,32 @@ const Page404 = lazy(() => import("../Pages/404"));
 const Login = lazy(() => import("../Pages/LoginPage"));
 const Home = lazy(() => import("../Pages/QuickAccess"));
 const AttendanceList = lazy(() => import("../Pages/AttendanceList"));
-const DailyReport = lazy(() => import("../Pages/DailyReportMagang"));
+const DailyReportBootcamp = lazy(() => import("../Pages/DailyReportMagang"));
+const DailyReportPkl = lazy(() => import("../Pages/DailyReportPkl"));
 const Score = lazy(() => import("../Pages/Score"));
 const Notif = lazy(() => import("../Pages/Notifications"));
 const Agenda = lazy(() => import("../Pages/Agenda"));
-const ReportForm = lazy(() => import("../Pages/LaporanMagangBootcamp"));
+const ReportFormBootcamp = lazy(() => import("../Pages/LaporanMagangBootcamp"));
+const ReportFormPkl = lazy(() => import("../Pages/LaporanMagangPkl"));
 const PresensiSakit = lazy(() => import("../Pages/PresensiSakit"));
 const PresensiIzin = lazy(() => import("../Pages/PresensiIzin"));
+const CreateUser = lazy(() => import("../Pages/UserBaru"));
+const HomeAdmin = lazy(() => import("../Pages/HomeAdmin"));
+const AgendaAdmin = lazy(() => import("../Pages/Agenda2"));
+const CreateNewAgenda = lazy(() => import("../Pages/AgendaBaru"));
+const DailyReportAdmin = lazy(() => import("../Pages/DailyReportAdmin"));
+const ManagementUser = lazy(() => import("../Pages/ManagementUser"));
+const ManagementAgenda = lazy(() => import("../Pages/ManagementAgenda"))
+
+
 
 
 const RouteStacks = () => {
   const [localSession, setLocalSession] = useState({});
+  const [firstLoad, setFirstLoad] = useState(true);
   useEffect(() => {
     supabase.auth.onAuthStateChange(async (_event, session) => {
-      console.log(_event);
-      console.log(session);
+      console.log('authChange')
       if (session != null) {
         let { data, error } = await supabase
           .from("user_data")
@@ -35,6 +47,7 @@ const RouteStacks = () => {
       } else {
         setLocalSession({});
       }
+      setFirstLoad(false)
     });
   }, []);
   const loggedIn = () => {
@@ -49,10 +62,11 @@ const RouteStacks = () => {
     return localSession.first_login;
   };
   const noFirstLogin = () => {
+    console.log('noFirstLogin',localSession.first_login)
     return !localSession.first_login;
   };
 
-  return (
+  return ( firstLoad?<Preloader/>:
     <Switch>
       <Route exact path="/">
         <Redirect
@@ -91,7 +105,18 @@ const RouteStacks = () => {
         redirectTo="/auth/login"
       >
         <BaseLayout>
-          <DailyReport />
+          <DailyReportBootcamp />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/daily-report-pkl"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <DailyReportPkl />
         </BaseLayout>
       </PrivateRoute>
 
@@ -135,7 +160,18 @@ const RouteStacks = () => {
         redirectTo="/auth/login"
       >
         <BaseLayout>
-          <ReportForm />
+          <ReportFormBootcamp />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/daily-report-pkl/laporan-magang-pkl"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <ReportFormPkl />
         </BaseLayout>
       </PrivateRoute>
 
@@ -161,12 +197,89 @@ const RouteStacks = () => {
         </BaseLayout>
       </PrivateRoute>
 
+      <PrivateRoute
+        exact
+        path="/user-baru"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <CreateUser />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/home-admin"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <HomeAdmin />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/agenda-admin"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <AgendaAdmin />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/agenda-baru"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <CreateNewAgenda />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/daily-report-admin"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <DailyReportAdmin />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/management-user"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <ManagementUser />
+        </BaseLayout>
+      </PrivateRoute>
+
+      <PrivateRoute
+        exact
+        path="/management-agenda"
+        allow={[loggedIn, noFirstLogin]}
+        redirectTo="/auth/login"
+      >
+        <BaseLayout>
+          <ManagementAgenda />
+        </BaseLayout>
+      </PrivateRoute>
+
       
 
       <PrivateRoute
         exact
         path="/auth/:page"
-        allow={[loggedOut]}
+        allow={[firstLogin]}
         redirectTo="/dashboard"
       >
         <Login />

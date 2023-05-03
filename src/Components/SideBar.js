@@ -17,8 +17,6 @@ import { useState, useEffect } from "react";
 const SideBar = ({ pathname }) => {
   let isTab = useMediaQuery({ query: "(max-width:768px)" });
   const location = useLocation();
-
-  console.log(isTab, "isTab");
   
   // Sidebar Open State
   const [isOpen, setIsOpen] = useState(isTab ? false : true);
@@ -94,7 +92,7 @@ const SideBar = ({ pathname }) => {
           <img
             src={logo}
             alt="logo"
-            className="pr-5 w-[4rem]"
+            className="pr-5 w-[4rem] hover:cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           />
           <span

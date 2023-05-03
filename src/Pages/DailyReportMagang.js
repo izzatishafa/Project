@@ -36,8 +36,6 @@ const DailyReportMagang = () => {
       .from("student_assignment_report")
       .select("*")
       .eq("student_id", dataSession.session.user.id);
-
-    console.log(data);
     setData(data);
   };
 

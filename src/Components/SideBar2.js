@@ -18,8 +18,6 @@ const SideBar2 = ({pathname}) => {
     let isTab = useMediaQuery({ query:"(max-width:768px)" })
     const location = useLocation();
 
-    console.log(isTab, "isTab");
-
     // Sidebar Open State
     const [isOpen, setIsOpen] = useState(isTab ? false : true );
 

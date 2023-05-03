@@ -35,19 +35,9 @@ const ReactDatePicker = (props) => {
           style={{ color: "black" }}
         />
 
-        <div
-          className={`absolute top-1.5 right-3 w-5 h-5 flex-items-center justify-center ${
-            props.isMobile ? "sm:hidden" : ""
-          }`}
-        >
+        <div className={`absolute top-1.5 right-3 w-5 h-5 flex-items-center justify-center`}>
           <img src={calendar} alt="" />
         </div>
-
-        {!props.isMobile && (
-          <span className="absolute top-2 right-3">
-            {selectedDate ? format(selectedDate, "dd/MM/yyyy") : ""}
-          </span>
-        )}
       </div>
     </div>
   );

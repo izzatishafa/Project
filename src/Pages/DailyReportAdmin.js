@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import DetailBtn from "../Components/DetailBtn";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import moment from "moment";
 import { supabase } from "../supabaseClient";
 
@@ -35,8 +34,6 @@ const DailyReportAdmin = () => {
     let { data, error } = await supabase
       .from("student_assignment_report")
       .select("*");
-
-    console.log(data);
     setData(data)
   };
 

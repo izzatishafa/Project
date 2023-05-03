@@ -19,7 +19,6 @@ export default function LoginPage() {
     password: "",
   });
   async function signInWithEmail({ email, password }) {
-    console.log(email, password);
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -39,12 +38,10 @@ export default function LoginPage() {
 
   const handleRetrieveSession = async () => {
     const session = await supabase.auth.getSession();
-    console.log(session.data);
   };
 
   const LoginForm = () => {
     const handleSubmit = async (values, { resetForm }) => {
-      console.log(values);
       signInWithEmail({ email: values.email, password: values.password }).then(
         ({ data, error }) => {
           if (data.session != null) {
@@ -124,12 +121,6 @@ export default function LoginPage() {
 
   const CompleteProfileForm = () => {
     const handleSubmit = async (values) => {
-      console.log({
-        email: data.session.user.email,
-        first_login: false,
-        no_whatsapp: values.no_whatsapp,
-        asal_sekolah: values.asal_sekolah,
-      })
       const { data } = await supabase.auth.getSession();
       const { error } = await supabase.from("user_data").insert({
         email: data.session.user.email,
@@ -153,11 +144,30 @@ export default function LoginPage() {
           </h2>
           <ProfilePicture />
           <Formik
-            initialValues={{ no_whatsapp: "", asal_sekolah: "" }}
+            initialValues={{ nama_lengkap: "", no_whatsapp: "", asal_sekolah: "" }}
             onSubmit={handleSubmit}
           >
             {({ errors, touched }) => (
               <Form className="grid grid-cols-12">
+                <label
+                  htmlFor="nama_lengkap"
+                  className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
+                >
+                  Nama Lengkap
+                </label>
+                <Field
+                  type="text"
+                  name="nama_lengkap"
+                  placeholder="Masukkan nama lengkap"
+                  className={classNames(
+                    `bg-gray-100 font-poppins text-xs rounded-md p-2 mb-3 outline-none col-span-12`,
+                    {
+                      "border-red-500":
+                        errors.nama_lengkap && touched.nama_lengkap,
+                    }
+                  )}
+                />
+
                 <label
                   htmlFor="no_whatsapp"
                   className="text-dark-blue font-poppins font-thin text-sm pb-1 col-span-12"
@@ -197,7 +207,7 @@ export default function LoginPage() {
                     `bg-gray-100 font-poppins text-xs rounded-md p-2 mb-5 outline-none col-span-12`,
                     {
                       "border-red-500":
-                        errors.no_whatsapp && touched.no_whatsapp,
+                        errors.asal_sekolah && touched.asal_sekolah,
                     }
                   )}
                 />
@@ -217,7 +227,6 @@ export default function LoginPage() {
     );
   };
 
-
   const ChangePasswordForm = () => {
     const handleSubmit = async (values) => {
       if (values.new_password !== values.confirm_new_password) {
@@ -229,12 +238,14 @@ export default function LoginPage() {
         return;
       }
 
-
       const { user, error } = await supabase.auth.updateUser({
         password: values.new_password,
       });
 
-      if (error === null && values.new_password === values.confirm_new_password) {
+      if (
+        error === null &&
+        values.new_password === values.confirm_new_password
+      ) {
         Swal.fire({
           icon: "success",
           title: "Success",

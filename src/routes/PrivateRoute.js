@@ -9,8 +9,6 @@ const PrivateRoute = ({ children, redirectTo = '/auth/login', allow = [],path, .
 	const location = useLocation()
 	const routePath = path.includes(":")?path.slice(0, path.indexOf(":")):path
 	const allowBoolExec = location.pathname.includes(routePath) ? allow.map((func) => func()) : [true]
-	console.log(allowBoolExec)
-	console.log(location.pathname.includes(routePath))
 	return (
 		<Route
 			{...props}
