@@ -3,20 +3,21 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import SubmitBtn from "../Components/SubmitBtn";
 import UploadBtn from "../Components/UploadBtn";
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
 import { Form, Formik } from "formik";
 import { supabase } from "../supabaseClient";
 
 const LaporanMagangPkl = () => {
   const history = useHistory();
   const handleSubmit = async (values) => {
+    console.log("clicked");
     const { data } = await supabase.auth.getSession();
     const { error } = await supabase.from("intern_assignment").insert({
-      activity: values.activity,
-      desc: values.desc,
-      keterangan: values.keterangan,
-      student_id: data.session.user.id,
+      activity: "",
+      desc: "",
+      keterangan: "",
+      student_id: "",
     });
+    history.push("/daily-report-pkl");
     if (error === null) {
       history.push("/daily-report-pkl");
     }
@@ -54,11 +55,7 @@ const LaporanMagangPkl = () => {
         }}
         onSubmit={handleSubmit}
       >
-        {({
-          values,
-          handleChange,
-          setFieldValue,
-        }) => (
+        {({ values, handleChange, setFieldValue }) => (
           <Form>
             <div className="flex flex-row">
               <div className="flex flex-col w-full px-14">
@@ -102,7 +99,14 @@ const LaporanMagangPkl = () => {
                 </div>
               </div>
             </div>
-            <SubmitBtn onClick={handleSubmit} marginTop="6" />
+            <div className="flex justify-center items-center">
+            <button
+              type="submit"
+              className="w-full selection:px-[1rem] bg-light-blue hover:bg-hv-light-blue p-1.5 text-md text-white font-poppins bold rounded-md mt-5"
+            >
+              Submit
+            </button>
+            </div>
           </Form>
         )}
       </Formik>
