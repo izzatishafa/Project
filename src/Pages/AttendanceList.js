@@ -1,10 +1,10 @@
 import profile from '../Assets/pict2.jpg'
 import DoughnutChart from '../Components/AttendanceChart'
-import PresentBtn from '../Components/PresentBtn'
+import AttendanceBtn from '../Components/AttendanceBtn'
 import Sakit from '../Components/SakitBtn'
 import Izin from '../Components/IzinBtn'
-import { useHistory } from "react-router-dom";
- 
+import { useHistory } from "react-router-dom"
+
 
 const AttendanceList = () => {
     const history = useHistory();
@@ -31,7 +31,7 @@ const AttendanceList = () => {
                             <p className={`font-poppins text-base text-dark-gray`}>Magang Bootcamp</p>
                             <p className={`font-poppins text-sm text-dark-gray`}>Front-End</p>
                             <p className={`font-poppins text-xs text-dark-gray`}>Waktu masuk terekam: <span><b>09.00 WIB</b></span></p>
-                            <PresentBtn />
+                            <AttendanceBtn />
                             <p className={`text-red text-sm font-poppins`}>Keterangan tidak masuk</p>
                             <div className="flex flex-row gap-3 items-center justify-center my-2">
                             <Sakit onClick={handleGoToSickForm} />

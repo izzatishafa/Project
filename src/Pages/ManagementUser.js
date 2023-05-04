@@ -2,14 +2,19 @@ import SearchBar from "../Components/SearchBar"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
-import TwinButton from "../Components/TwinButton"
+import TwinButton from "../Components/DetailDeleteButton"
 import AddBtn from "../Components/AddBtn"
 import profile from "../Assets/pict2.jpg"
 import { useState, useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 
 
 
 function ManagementUser() {
+  const history = useHistory();
+  const handleAdd = () => {
+    history.push("/management-user/user-baru");
+  };
   const [showPerPage, setShowPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [user, setUser] = useState([]);
@@ -60,7 +65,7 @@ function ManagementUser() {
           <option value="10">10</option>
         </select>
         </div>
-        <AddBtn />
+        <AddBtn onClick={handleAdd}/>
     </div>
     <div className="pr-10 pl-20 pt-4">
     <table className="w-full border-collapse">

@@ -3,18 +3,45 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import AddBtn from "../Components/AddBtn";
-import TwinButton from "../Components/TwinButton";
+import DetailDeleteButton from "../Components/DetailDeleteButton";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
-import { title } from "case";
 import { supabase } from "../supabaseClient";
 import { useState, useEffect } from "react";
+
 
 const DailyReportPkl = () => {
   const history = useHistory();
   const handleAdd = () => {
     history.push("/daily-report-pkl/laporan-magang-pkl");
   };
+  const [showPerPage, setShowPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [agenda, setAgenda] = useState([]);
+  const [data, setData] = useState([]);
+
+  function handlePageChange(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
+
+  const totalPages = Math.ceil(data.length / showPerPage);
+
+  const startIndex = (currentPage - 1) * showPerPage;
+  const endIndex = startIndex + showPerPage;
+  const currentPageUsers = data.slice(startIndex, endIndex);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const { data: dataSession } = await supabase.auth.getSession();
+    let { data, error } = await supabase
+      .from("intern_assignment")
+      .select("*")
+      .eq("student_id", dataSession.session.user.id);
+    setData(data);
+  };
+
   return (
     <div className="w-full flex flex-col">
       <div className="p-8 ml-10">
@@ -47,77 +74,35 @@ const DailyReportPkl = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                2023-03-23
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                Hands-on coding JavaScript
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                <TwinButton />
-              </td>
-            </tr>
-            <tr>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                2023-03-23
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                Hands-on coding JavaScript
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                <TwinButton />
-              </td>
-            </tr>
-            <tr>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                2023-03-23
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                Hands-on coding JavaScript
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                <TwinButton />
-              </td>
-            </tr>
-            <tr>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                2023-03-23
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                Hands-on coding JavaScript
-              </td>
-              <td
-                className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
-              >
-                <TwinButton />
-              </td>
-            </tr>
+            {currentPageUsers.map((item) => (
+              <tr key={item.id}>
+                <td
+                  className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
+                >
+                  {moment(item.created_at, "YYYY-MM-DD").format("DD MMM YYYY")}
+                </td>
+                <td
+                  className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
+                >
+                  {item.activity}
+                </td>
+                <td
+                  className={`border px-4 py-2 text-center font-poppins text-light-gray text-sm`}
+                >
+                  <DetailDeleteButton />
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
+      <div className="flex justify-center space-x-2 mt-10 mb-5 mr-10">
+      {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
+        <button key={pageNumber} className={`px-2 py-1 font-poppins font-bold rounded-md ${currentPage === pageNumber ? 'text-black' : 'text-light-gray'}`} onClick={() => handlePageChange(pageNumber)}>
+          {pageNumber}
+        </button>
+      ))}
+    </div>
     </div>
   );
 };

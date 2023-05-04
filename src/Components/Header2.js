@@ -3,6 +3,8 @@ import { faGear, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import profile from '../Assets/pict2.jpg';
+import { supabase } from "../supabaseClient";
+
 
 const Header2 = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -11,9 +13,17 @@ const Header2 = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  const handleLogOut = async () => {
+    console.log("clicked")
+    const { error } = await supabase.auth.signOut();
+    if (error) console.log("Error signing out:", error.message);
+    else console.log("Signed out successfully");
+  };
+
+
   const location = useLocation();
 
-  let headerText = "Hello, Maccaroni El Matadore";
+  let headerText = "Hello, Tole";
 
   if (location.pathname === "/attendance-list2") {
     headerText = "Attendance List";
@@ -23,7 +33,7 @@ const Header2 = () => {
     headerText = "Score";
   } else if (location.pathname === "/notifications-admin") {
     headerText = "Notifications";
-  } else if (location.pathname === "/agenda2") {
+  } else if (location.pathname === "/agenda-admin") {
     headerText = "Agenda";
   } else if (location.pathname === "/management-user") {
     headerText = "Management User";
@@ -58,11 +68,13 @@ const Header2 = () => {
                   Settings
                 </button>
               </div>
-              <div>
-                <button className="flex flex-row font-bold text-sm">
+              <div onClick={handleLogOut} className="py-2 px-4 hover:bg-dark-blue hover:text-white hover:rounded-md">
+                <span
+                  className="flex flex-row font-bold text-sm"
+                >
                   <FontAwesomeIcon icon={faRightFromBracket} className="mr-2" />
                   Log out
-                </button>
+                </span>
               </div>
             </div>
           )}
@@ -72,7 +84,7 @@ const Header2 = () => {
   );
 };
 
-export default Header2
+export default Header2;
 
 
 

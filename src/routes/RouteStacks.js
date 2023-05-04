@@ -199,7 +199,7 @@ const RouteStacks = () => {
 
       <PrivateRoute
         exact
-        path="/user-baru"
+        path="/management-user/user-baru"
         allow={[loggedIn, noFirstLogin]}
         redirectTo="/auth/login"
       >

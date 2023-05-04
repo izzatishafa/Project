@@ -7,17 +7,18 @@ export default function ProfilePicture() {
         src={profile}
         className="ml-[50px] rounded-full w-[175px] h-[175px] shadow-md object-cover"
       />
-      {/* <div className="absolute flex">
+      <div className="absolute flex items-center justify-center ml-3.5">
         <div
-          className="text-dark-blue w-[600px] h[900px] text-center text-[11px] font-poppins font-bold
-                bg-white bg-opacity-50 opacity-0 trasition hover:opacity-100 p-11 cursor-pointer"
+          className="text-dark-blue w-[250px] h-[200px] text-[14px] font-poppins font-bold
+                bg-white bg-opacity-50 opacity-0 transition hover:opacity-100 cursor-pointer rounded-full"
         >
-          <p>
+          <p className="flex items-center justify-center text-center pt-[70px]">
             Tambah Foto <br />
             Profil
           </p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }
+

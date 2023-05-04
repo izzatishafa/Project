@@ -87,37 +87,6 @@ export default function DetailBtn({ onClick, data }) {
             </div>
           </div>
         </div>
-        {/* <div className="flex justify-center mt-20 ml-72">
-        <div className="flex flex-col bg-white rounded shadow-lg w-[900px] h-[550px] z-10">
-            <div className="flex flex-row justify-end gap-[310px]">
-            <h1 className={`text-center text-lg text-dark-blue font-bold font-poppins pt-5 pb-2`}>Testing Taxand</h1>
-            <button
-            className="py-6 px-7 flex rounded"
-            onClick={toggleModal} 
-          >
-            <CgCloseR className="hover:bg-slate-200"/>
-          </button>
-            </div>
-            <div className="flex flex-row gap-3 text-left pt-3 pb-1.5 pl-10">
-                <p className="text-dark-blue font-thin font-poppins text-sm">4/3/2023</p>
-                <p className="text-dark-blue font-bold font-poppins text-sm">On Progress</p>
-            </div>
-            <p className="pb-5 px-10 text-xs text-dark-blue font-bold font-poppins">Lorem ipsum dolor sit amet consectetur. Quis aliquet molestie velit nibh egestas mi vestibulum.
-                Elementum euismod pretium nisi convallis molestie. Maecenas fringilla bibendum neque scelerisque
-                pretium lobortis feugiat viverra aliquet. Venenatis luctus proin tempor accumsan ac sapien tortor
-                non phasellus. Sollicitudin adipiscing orci ullamcorper pulvinar diam purus diam. Etiam nec pretium
-                egestas eget. Quisque dui vitae ornare placerat id ultrices donec sed mattis. Aliquet ipsum augue
-                faucibus fusce.</p>
-            <div className="flex flex-row items-center justify-center gap-4 pt-8 pb-5">
-                <img src={dokumentasi3} className="w-[400px] h-[250px]" />
-                <img src={dokumentasi4} className="w-[400px] h-[250px]" />
-            </div>
-            <div className="flex flex-row justify-center items-center gap-3">
-                <AgreeBtn />
-                <DenyBtn />
-            </div>
-        </div>
-        </div> */}
       </Modal>
     </div>
   );
