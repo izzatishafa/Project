@@ -3,23 +3,12 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import SelectStatus from "../Components/SelectStatus";
 import UploadBtn from "../Components/UploadBtn";
 import { useHistory } from "react-router-dom";
-import { useState } from "react";
 import { Form, Formik } from "formik";
 import { supabase } from "../supabaseClient";
 
 const LaporanMagangBootcamp = () => {
   const history = useHistory();
   const handleSubmit = async (values) => {
-    console.log(
-      {
-        title: values.task,
-        status: values.status.value,
-        desc: values.keterangan,
-        project: values.nama_project,
-        kendala: values.kendala,
-        student_id: data.session.user.id,
-      }
-    )
     const { data } = await supabase.auth.getSession();
     const { error } = await supabase.from("student_assignment_report").insert({
       title: values.task,
@@ -33,6 +22,7 @@ const LaporanMagangBootcamp = () => {
       history.push("/daily-report-magang");
     }
   };
+
   const handleGoBack = () => {
     history.push("/daily-report-magang");
   };
@@ -85,6 +75,7 @@ const LaporanMagangBootcamp = () => {
                   </label>
                   <input
                     type="text"
+                    required
                     placeholder="contoh kegiatan"
                     name="task"
                     onChange={handleChange}
@@ -124,6 +115,7 @@ const LaporanMagangBootcamp = () => {
                     </label>
                     <input
                       type="text"
+                      required
                       placeholder="contoh nama project"
                       name="nama_project"
                       onChange={handleChange}
@@ -138,6 +130,7 @@ const LaporanMagangBootcamp = () => {
                     className={`w-full font-poppins px-3 py-2 text-black border rounded-md outline-none my-2 text-sm`}
                     placeholder="contoh uraian kendala"
                     name="kendala"
+                    required
                     onChange={handleChange}
                     value={values.kendala}
                   />

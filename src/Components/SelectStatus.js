@@ -17,6 +17,7 @@ const SelectStatus = (props) => {
             value={props.value}
             name={props.name}
             options={options}
+            required
             placeholder="Pilih Status"
             className={classNames(`border-thin rounded-lg placeholder-light-gray font-poppins outline-none my-2`, props.className)}
         />

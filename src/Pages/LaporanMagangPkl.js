@@ -12,16 +12,17 @@ const LaporanMagangPkl = () => {
     console.log("clicked");
     const { data } = await supabase.auth.getSession();
     const { error } = await supabase.from("intern_assignment").insert({
-      activity: "",
-      desc: "",
-      keterangan: "",
-      student_id: "",
+      activity: values.activity,
+      desc: values.desc,
+      keterangan: values.keterangan,
+      student_id: data.session.user.id,
     });
     history.push("/daily-report-pkl");
     if (error === null) {
       history.push("/daily-report-pkl");
     }
   };
+
   const handleGoBack = () => {
     history.push("/daily-report-pkl");
   };
@@ -64,6 +65,7 @@ const LaporanMagangPkl = () => {
                 </label>
                 <input
                   type="text"
+                  required
                   placeholder="contoh kegiatan"
                   name="activity"
                   onChange={handleChange}
@@ -78,6 +80,7 @@ const LaporanMagangPkl = () => {
                   className={`w-full font-poppins px-3 py-2 text-black border rounded-md outline-none my-2 text-sm`}
                   placeholder="contoh keterangan"
                   name="desc"
+                  required
                   onChange={handleChange}
                   value={values.desc}
                 />

@@ -9,7 +9,6 @@ import moment from "moment";
 import { supabase } from "../supabaseClient";
 import { useState, useEffect } from "react";
 
-
 const DailyReportPkl = () => {
   const history = useHistory();
   const handleAdd = () => {
@@ -19,6 +18,13 @@ const DailyReportPkl = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [agenda, setAgenda] = useState([]);
   const [data, setData] = useState([]);
+
+  const handleDelete = async () => {
+    const { data, error } = await supabase
+      .from("intern_assignment")
+      .delete()
+      .eq("some_column", "someValue");
+  };
 
   function handlePageChange(pageNumber) {
     setCurrentPage(pageNumber);
@@ -97,12 +103,20 @@ const DailyReportPkl = () => {
         </table>
       </div>
       <div className="flex justify-center space-x-2 mt-10 mb-5 mr-10">
-      {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
-        <button key={pageNumber} className={`px-2 py-1 font-poppins font-bold rounded-md ${currentPage === pageNumber ? 'text-black' : 'text-light-gray'}`} onClick={() => handlePageChange(pageNumber)}>
-          {pageNumber}
-        </button>
-      ))}
-    </div>
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+          (pageNumber) => (
+            <button
+              key={pageNumber}
+              className={`px-2 py-1 font-poppins font-bold rounded-md ${
+                currentPage === pageNumber ? "text-black" : "text-light-gray"
+              }`}
+              onClick={() => handlePageChange(pageNumber)}
+            >
+              {pageNumber}
+            </button>
+          )
+        )}
+      </div>
     </div>
   );
 };

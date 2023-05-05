@@ -21,6 +21,13 @@ const DailyReportMagang = () => {
   const [agenda, setAgenda] = useState([]);
   const [data, setData] = useState([]);
 
+  const handleDelete = async () => {
+    const { data, error } = await supabase
+      .from("student_assignment_report")
+      .delete()
+      .eq("some_column", "someValue");
+  };
+
   function handlePageChange(pageNumber) {
     setCurrentPage(pageNumber);
   }

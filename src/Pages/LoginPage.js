@@ -127,6 +127,7 @@ export default function LoginPage() {
         first_login: false,
         no_whatsapp: values.no_whatsapp,
         asal_sekolah: values.asal_sekolah,
+        full_name: values.nama_lengkap,
       });
       if (error === null) {
         history.push("/auth/change-password");

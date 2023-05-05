@@ -57,6 +57,7 @@ const UserBaru = () => {
                 </p>
                 <input
                   type="text"
+                  required
                   placeholder="Masukkan email aktif"
                   name="email"
                   onChange={handleChange}
@@ -70,6 +71,7 @@ const UserBaru = () => {
                   type="password"
                   placeholder="Masukkan password"
                   name="password"
+                  required
                   onChange={handleChange}
                   value={values.password}
                   className={`placeholder-light-gray font-poppins text-sm border-2 w-full rounded-md py-1 px-2 my-2 outline-none`}

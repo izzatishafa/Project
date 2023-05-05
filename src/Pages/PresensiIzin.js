@@ -33,6 +33,7 @@ const PresensiIzin = () => {
                         <textarea
                         className={`w-full placeholder-font-poppins px-3 py-2 text-black border rounded-md outline-none`}
                         placeholder="Masukkan Pesan..."
+                        required
                         />
                     </div>
                     <div className="flex flex-row items-center px-16">
